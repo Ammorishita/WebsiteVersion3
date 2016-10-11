@@ -1,0 +1,65 @@
+html, body { 
+	margin: 0px; 
+	padding: 0px; 
+	border: 0px; 
+}
+
+header {
+	width: 1024px;
+	height: 125px;
+	background-color: green;
+	margin: auto;
+}
+
+main section {
+	background-color: black;
+	width: 1024px;
+	height: 500px;
+	margin: auto;
+}
+
+nav ul {
+	background-color: blue;
+	width: 1024px;
+	height: auto;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0;
+}
+
+nav ul li {
+	background: linear-gradient(black, navy);
+	border: 2px solid black;
+	width: auto;
+	height: auto;
+	padding: 0px 5px;
+	font-size: 25px;
+	display: inline-block;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: Skyblue;
+	font-family: arial;
+}
+nav ul li a:hover {
+	color: white;
+}
+#box {
+	width: 200px;
+	height: 200px;
+	background-color: purple;
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+#container {
+	display: flex;
+	flex-wrap: wrap;
+}
+#menu {
+	width: 150px;
+	height: 490px;
+	background-color: white;
+	border: 5px solid Navy;
+}
