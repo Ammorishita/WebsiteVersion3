@@ -1,8 +1,8 @@
-
+var durationleft, durationright, canClick;
 
 var BoxStats = [
 	{
-		'score': 'Level: ' + 0
+		'score': 0
 	}
 ]
 var Box = function(data) {
@@ -10,10 +10,10 @@ var Box = function(data) {
 }
 var ViewModel = function() {
 	var self = this;
+	canClick = false;
+	var width = 200;
+	var height = 200;
 	self.boxlist = ko.observableArray([]);
-	var screen = document.getElementById('screen');
-	var boxSize = $('#box').css('left');
-	console.log(boxSize);
 	BoxStats.forEach(function(boxItem){
 		self.boxlist().push(new Box(boxItem));
 		console.log(self.boxlist())
@@ -25,48 +25,53 @@ var ViewModel = function() {
 	self.start = function() {
 		self.right();
 		$('.start').hide();
-	};
-	self.left = function() {
-		var duration = Math.random() * 2500;
-		$('#box').animate({
-			left: "0px"
-		}, duration, self.right)
+		box.addEventListener('click', self.success);
 	};
 	self.right = function() {
-		var duration = Math.random() * 2500;
+		duration = Math.random() * 4000;
 		$('#box').animate({
 			left: "500px"
 		}, duration, self.left)
+	};
+	self.left = function() {
+		duration = Math.random() * 4000;
+		$('#box').animate({
+			left: "0px"
+		}, duration, self.right)
 	};
 	self.success = function(e) {
 		e.stopPropagation();
 		self.currentBox().score(self.currentBox().score() + 1);
 		$('#box').stop();
 		self.nextLevel();
-		box.removeEventListener('click', self.success);
+		//box.removeEventListener('click', self.success);
 	};
 	self.nextLevel = function() {
 		console.log('LEVEL UP')
+		width-= 25;
+		height-= 25;
 		$('#box').css({
 			left: '0px',
 			backgroundColor: 'red',
-			width: '150px',
-			height: '150px'
+			width: width + 'px',
+			height: height + 'px'
 		});
-		right();
+		self.right();
 	};
 	self.reset = function() {
 		self.currentBox().score(0);
 		console.log('game over')
+		width = 200;
+		height = 200;
 		$('#box').stop().css({
 			left: '0px',
 			width: '200px',
 			height: '200px',
 			backgroundColor: 'purple'
 		});
+		box.removeEventListener('click', self.success)
 		$('.start').show();
 	};	
-	box.addEventListener('click', self.success);
 
 	$('#screen').click(function() {
 		self.reset();
