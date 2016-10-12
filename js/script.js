@@ -1,26 +1,8 @@
-$(document).ready(function() {
-	var duration;
-	function left() {
-		var duration = Math.random() * 2500;
-		$('#box').animate({
-			left: "0px"
-		}, duration, right)
-	};
-	function right() {
-		var duration = Math.random() * 2500;
-		$('#box').animate({
-			left: "900px"
-		}, duration, left)
-	};
-	$('.start').click(function() {
-		right();
-		$(this).hide();
-	});
-});
+
 
 var BoxStats = [
 	{
-		'score': 0
+		'score': 'Level: ' + 0
 	}
 ]
 var Box = function(data) {
@@ -29,20 +11,70 @@ var Box = function(data) {
 var ViewModel = function() {
 	var self = this;
 	self.boxlist = ko.observableArray([]);
+	var screen = document.getElementById('screen');
+	var boxSize = $('#box').css('left');
+	console.log(boxSize);
 	BoxStats.forEach(function(boxItem){
 		self.boxlist().push(new Box(boxItem));
 		console.log(self.boxlist())
 	});
 	self.currentBox = ko.observable(self.boxlist()[0]);
-	self.addScore = function() {
+
+	////////--------ALL GAME FUNCTIONS-------------////////
+
+	self.start = function() {
+		self.right();
+		$('.start').hide();
+	};
+	self.left = function() {
+		var duration = Math.random() * 2500;
+		$('#box').animate({
+			left: "0px"
+		}, duration, self.right)
+	};
+	self.right = function() {
+		var duration = Math.random() * 2500;
+		$('#box').animate({
+			left: "500px"
+		}, duration, self.left)
+	};
+	self.success = function(e) {
+		e.stopPropagation();
 		self.currentBox().score(self.currentBox().score() + 1);
 		$('#box').stop();
-		box.removeEventListener('click', self.addScore);
-	}
-	box.addEventListener('click', self.addScore);
-}
-function init() {
-	ko.applyBindings(new ViewModel());;
-};
+		self.nextLevel();
+		box.removeEventListener('click', self.success);
+	};
+	self.nextLevel = function() {
+		console.log('LEVEL UP')
+		$('#box').css({
+			left: '0px',
+			backgroundColor: 'red',
+			width: '150px',
+			height: '150px'
+		});
+		right();
+	};
+	self.reset = function() {
+		self.currentBox().score(0);
+		console.log('game over')
+		$('#box').stop().css({
+			left: '0px',
+			width: '200px',
+			height: '200px',
+			backgroundColor: 'purple'
+		});
+		$('.start').show();
+	};	
+	box.addEventListener('click', self.success);
 
+	$('#screen').click(function() {
+		self.reset();
+	});
+	/////-----------END OF GAME FUNCTIONS------------//////
+}
+
+$(function() {
+	ko.applyBindings(new ViewModel());;
+});
 

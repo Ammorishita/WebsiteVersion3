@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/gamestyle.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<script src="js/libs/knockout.js"></script>
@@ -31,9 +32,9 @@
 			<div id="container">
 				<div id="menu" data-bind="with: currentBox">
 					<li data-bind="text: score"></li>
-					<button class="start" onclick="init()">START</button>
+					<button class="start" data-bind="click: $root.start">START</button>
 				</div>
-				<div id="canvas">
+				<div id="screen">
 					<div id="box">
 					</div>
 				</div>
