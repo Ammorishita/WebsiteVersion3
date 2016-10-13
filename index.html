@@ -30,9 +30,22 @@
 	<main>
 		<section>
 			<div id="container">
-				<div id="menu" data-bind="with: currentBox">
-					<li data-bind="text: score"></li>
-					<button class="start" data-bind="click: $root.start">START</button>
+				<div id="menu">
+					<div data-bind="with: currentBox">
+					Level:<li data-bind="text: score"></li>						
+					</div>
+					<button class="start" data-bind="with: currentBox, click: $root.start">START</button>
+					<li>Rules: Successfully click the moving box. Reach level 8 to win.</li>
+					<br>
+					<li data-bind="visible: level1">Got what it takes?</li>
+					<li data-bind="visible: level2">Ok that was easy.</li>
+					<li data-bind="visible: level3">Is that box moving faster?</li>
+					<li data-bind="visible: level4">Still easy?</li>
+					<li data-bind="visible: level5">No way you will make it further.</li>
+					<li data-bind="visible: level6">Hehe..</li>
+					<li data-bind="visible: level7">IMPOSSIBLE!!</li>
+					<li data-bind="visible: level8">You win!!</li>
+					<li data-bind="visible: gameover">I knew you couldn't do it.</li>
 				</div>
 				<div id="screen">
 					<div id="box">
