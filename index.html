@@ -31,8 +31,8 @@
 		<section>
 			<div id="container">
 				<div id="menu">
-					<div data-bind="with: currentBox">
-					Level:<li data-bind="text: score"></li>						
+					<div class="level" data-bind="with: currentBox">
+					<li class="currentlevel">Current Level:</li><li class="score" data-bind="text: score"></li>						
 					</div>
 					<button class="start" data-bind="with: currentBox, click: $root.start">START</button>
 					<li>Rules: Successfully click the moving box. Reach level 8 to win.</li>

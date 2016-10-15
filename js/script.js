@@ -1,4 +1,3 @@
-
 var BoxStats = [
 	{
 		'score': 1
@@ -9,12 +8,12 @@ var Box = function(data) {
 };
 var ViewModel = function() {
 	var self = this;
-	canClick = false;
 	var width = height = 200;
-	var speed = 2000;
+	var speed = 21000;
 	var number;
+	$('#screen').css('pointer-events', 'none');
 	self.dontclick = ko.observable(false);
-	self.level1 = ko.observable(true);
+	self.level1 = ko.observable(false);
 	self.level2 = ko.observable(false);
 	self.level3 = ko.observable(false);
 	self.level4 = ko.observable(false);
@@ -37,13 +36,15 @@ var ViewModel = function() {
 		console.log(number);
 	};
 	self.start = function() {
-		self.randomGenerate();
 		self.choice();
 		self.win(false);
-		console.log(speed);
+		self.level1(true);
+		console.log(speed);	
+		console.log(number);
+		console.log($('#box').position());
 		$('.start').hide();
 		self.gameover(false);
-		self.level1(true);
+		$('#screen').css('pointer-events', 'auto');
 		box.addEventListener('click', self.success);
 	};
 	self.choice = function() {
@@ -56,25 +57,25 @@ var ViewModel = function() {
 		if (number < 0.5 && xPos > 805 && yPos < 178) {
 			self.left();
 			console.log('moved left from top right')
-		} else if (number > 0.5 && xPos > 805 && yPos < 178) {
+		} else if (number >= 0.5 && xPos > 805 && yPos < 178) {
 			self.down();
 			console.log('moved down from top right')
-		} else if (number > 0.5 && xPos > 805 && yPos > 178) {
+		} else if (number >= 0.5 && xPos > 805 && yPos > 178) {
 			self.left();
 			console.log('moved left from bottom right')
 		} else if (number < 0.5 && xPos > 805 && yPos > 178) {
 			self.up();
 			console.log('moved up from bottom right')
-		} else if (number > 0.5 && xPos < 307 && yPos > 178) {
+		} else if (number >= 0.5 && xPos < 656 && yPos > 178) {
 			self.right();
 			console.log('moved right from bottom left')
-		} else if (number < 0.5 && xPos < 307 && yPos > 178) {
+		} else if (number < 0.5 && xPos < 656 && yPos > 178) {
 			self.up();
 			console.log('moved up from bottom left')
-		} else if (number > 0.5 && xPos < 307 && yPos < 178) {
+		} else if (number >= 0.5 && xPos < 656 && yPos < 178) {
 			self.right();
 			console.log('moved right from top left')
-		} else if (number < 0.5 && xPos < 307 && yPos < 178) {
+		} else if (number < 0.5 && xPos < 656 && yPos < 178) {
 			self.down();
 			console.log('moved down from top left')
 		}
@@ -111,7 +112,7 @@ var ViewModel = function() {
 			left: '0px'
 		}, 2000, self.nextLevel);
 		var score = self.currentBox().score();
-		console.log(score);
+		console.log('current score' + score);
 		if(score == 2) {self.level2(true); self.level1(false);}
 		if(score == 3) {self.level3(true); self.level2(false);}
 		if(score == 4) {self.level4(true); self.level3(false);}
@@ -123,11 +124,12 @@ var ViewModel = function() {
 			self.win(true); 
 			self.level8(false);
 			self.reset();
+			self.dontclick(false);
 		}	
 	};
 	self.nextLevel = function() {
 		console.log('LEVEL UP');
-		var safeColors = ['00','33','66','99','cc','ee'];
+		var safeColors = ['05','33','66','99','cc','dd'];
 		var rand = function() {
 		return Math.floor(Math.random()*6);
 		};
@@ -143,14 +145,12 @@ var ViewModel = function() {
 		speed-= 150;
 		console.log(speed);
 		$('#box').css({
-			top: '0px',
-			left: '0px',
 			width: width + 'px',
 			height: height + 'px'
 		});
 		var yPos = $('#box').position().top;
 		var xPos = $('#box').position().left;
-		self.start();
+		self.choice();
 		setTimeout(function() {
 			$('#screen').css('pointer-events', 'auto')
 			self.dontclick(false);
@@ -191,4 +191,3 @@ var ViewModel = function() {
 $(function() {
 	ko.applyBindings(new ViewModel());
 });
-
