@@ -6,10 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/gamestyle.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="js/libs/jquery-3.1.0.min.js"></script>
 	<script src="js/libs/knockout.js"></script>
-	<script src="js/script.js"></script>
+	<script src="js/game.js"></script>
 </head>
 <body>
 
@@ -28,33 +27,48 @@
 	</nav>
 
 	<main>
-		<section>
-			<div id="container">
+		<article>
+			<section id="container">
 				<div id="menu">
-					<div class="level" data-bind="with: currentBox">
-					<li class="currentlevel">Current Level:</li><li class="score" data-bind="text: score"></li>						
+					<button class="start" data-bind="with: currentBox, click: $root.start, disable: started">Start</button>
+					<button class="gameplay">Gameplay</button>			
+					<button class="status">Box Status</button>
+					<div class="playermenu">
+						<div class="levels" data-bind="with: currentBox">
+							<li class="currentlevel">Current Level:</li>
+							<li class="level" data-bind="text: level"></li>	
+							<li class="currentround">Current Round:</li>
+							<li class="round" data-bind="text: round"></li>
+							<li class="currentpower">Current Item:</li>
+							<li class="item" data-bind="text: round"></li>
+						</div>	
+					
+						<li data-bind="visible: level1">Got what it takes?</li>
+						<li data-bind="visible: level2">Ok that was easy.</li>
+						<li data-bind="visible: level3">Is that box moving faster?</li>
+						<li data-bind="visible: level4">Still easy?</li>
+						<li data-bind="visible: level5">No way you will make it further.</li>
+						<li data-bind="visible: level6">Hehe..</li>
+						<li data-bind="visible: level7">Sigh..</li>
+						<li data-bind="visible: level8">IMPOSSIBLE!!</li>
+						<li data-bind="visible: win">Wow, you won? That was just the first round.</li>
+						<li data-bind="visible: gameover">I knew you couldn't do it.</li>
 					</div>
-					<button class="start" data-bind="with: currentBox, click: $root.start">START</button>
-					<li>Rules: Successfully click the moving box. Reach level 8 to win.</li>
-					<br>
-					<li data-bind="visible: level1">Got what it takes?</li>
-					<li data-bind="visible: level2">Ok that was easy.</li>
-					<li data-bind="visible: level3">Is that box moving faster?</li>
-					<li data-bind="visible: level4">Still easy?</li>
-					<li data-bind="visible: level5">No way you will make it further.</li>
-					<li data-bind="visible: level6">Hehe..</li>
-					<li data-bind="visible: level7">Sigh..</li>
-					<li data-bind="visible: level8">IMPOSSIBLE!!</li>
-					<li data-bind="visible: win">Wow, you won? Play again?</li>
-					<li data-bind="visible: gameover">I knew you couldn't do it.</li>
 				</div>
 				<div id="screen">
+					<p class="warning" data-bind="visible: dontclick">DONT CLICK THE BOX</p>
 					<div id="box">
 					</div>
-					<p data-bind="visible: dontclick">DONT CLICK THE BOX</p>
+					<div id="gameplay">
+						<h2>Box Clicker</h2>
+						<p>Welcome to Box Clicker! Click the moving box to advance to the next round. How far can you get?  Some say this game is impossible to beat.</p>
+						<h3>Bonus Objectives</h3>
+						<h3>Avoid</h3>
+					</div>
+					
 				</div>
-			</div>
-		</section>	
+			</section>
+		</article>	
 	</main>
 
 	<footer>
