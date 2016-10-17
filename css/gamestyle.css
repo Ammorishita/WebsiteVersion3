@@ -12,20 +12,6 @@
 #container {
 	display: flex;
 	flex-wrap: wrap;
-}
-#gameplay {
-	display: block;
-	background-color: white;
-	width: 500px;
-	height: 350px;
-	border: 3px solid blue;
-	position: absolute;
-	top: 50px;
-	left: 100px;
-	z-index: 20;
-	text-align: center;
-	opacity: 1;
-	transition: width 2s;
 }	
 #menu {
 	width: 225px;
@@ -66,8 +52,25 @@
 	display: inline-block;
 	font-size: 20px;
 }
+.gameplayDisplay {
+	display: block;
+	visibility: hidden;
+	background-color: white;
+	width: 500px;
+	height: 0px;
+	position: absolute;
+	top: 50px;
+	left: 100px;
+	z-index: 20;
+	text-align: center;
+	opacity: 1;
+	transition: height 0.5s;
+}
 .gameplayAnimate {
-	width: 100px;	
+	height: 350px;
+	border: 3px solid Dodgerblue;
+	opacity: 0.9;
+	visibility: visible;
 }
 .levels {
 	display: flex;
@@ -87,7 +90,7 @@
 }
 .level, .round, .item {
 	background-color: blue;
-	width: 50px;
+	width: 60px;
 	height: 20px;
 	text-align: center;
 	display: inline-block;

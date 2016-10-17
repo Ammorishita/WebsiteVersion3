@@ -12,7 +12,7 @@ var ViewModel = function() {
 	var self = this;
 	var width = height = 200;
 	var speed = 2000;
-	var number;
+	var number, round, level;
 	var distance = 0;
 	$('#screen').css('pointer-events', 'none');
 	self.dontclick = ko.observable(false);
@@ -33,17 +33,15 @@ var ViewModel = function() {
 		console.log(self.boxlist());
 	});
 	self.currentBox = ko.observable(self.boxlist()[0]);
+
 	/// ---- ALL MENU FUNCTIONS --- ///
+
 	$('.gameplay').click(function() {
-		$('#gameplay').toggle()	
-	})
-
-
-
-
-
+		$('.gameplayDisplay').toggleClass('gameplayAnimate')	
+	});
 
 	////////--------ALL GAME FUNCTIONS-------------////////
+
 	self.randomGenerate = function() {
 		number = Math.random();
 		console.log(number);
@@ -70,28 +68,28 @@ var ViewModel = function() {
 		self.randomGenerate();
 		if (number < 0.5 && xPos >= 500 && yPos < 178) {
 			self.left();
-			console.log('moved left from top right')
+			console.log('moved left from top right');
 		} else if (number >= 0.5 && xPos >= 500 && yPos < 178) {
 			self.down();
-			console.log('moved down from top right')
+			console.log('moved down from top right');
 		} else if (number >= 0.5 && xPos >= 500 && yPos >= 178) {
 			self.left();
-			console.log('moved left from bottom right')
+			console.log('moved left from bottom right');
 		} else if (number < 0.5 && xPos >= 500 && yPos >= 178) {
 			self.up();
-			console.log('moved up from bottom right')
+			console.log('moved up from bottom right');
 		} else if (number >= 0.5 && xPos < 500 && yPos >= 178) {
 			self.right();
-			console.log('moved right from bottom left')
+			console.log('moved right from bottom left');
 		} else if (number < 0.5 && xPos < 500 && yPos >= 178) {
 			self.up();
-			console.log('moved up from bottom left')
+			console.log('moved up from bottom left');
 		} else if (number >= 0.5 && xPos < 500 && yPos < 178) {
 			self.right();
-			console.log('moved right from top left')
+			console.log('moved right from top left');
 		} else if (number < 0.5 && xPos < 500 && yPos < 178) {
 			self.down();
-			console.log('moved down from top left')
+			console.log('moved down from top left');
 		}
 	};
 	self.right = function() {
@@ -118,16 +116,9 @@ var ViewModel = function() {
 		distance+=25;
 		e.stopPropagation();
 		self.currentBox().round(self.currentBox().round() + 1);
-		$('#box').stop();
-		$('#box').css('background' , 'red');
-		$('#screen').css('pointer-events', 'none')
-		self.dontclick(true);
-		$('#box').animate({
-			top: '0px',
-			left: '0px'
-		}, 2000, self.nextLevel);
-		var round = self.currentBox().round();
-		console.log('current round' + round);
+		round = self.currentBox().round();
+		level = self.currentBox().level();
+		console.log(round, level)
 		if(round == 2) {self.level2(true); self.level1(false);}
 		if(round == 3) {self.level3(true); self.level2(false);}
 		if(round == 4) {self.level4(true); self.level3(false);}
@@ -136,12 +127,22 @@ var ViewModel = function() {
 		if(round == 7) {self.level7(true); self.level6(false);}
 		if(round == 8) {self.level8(true); self.level7(false);}	
 		if(round == 9) {
-			self.win(true); 
 			self.level8(false);
-			self.reset();
-			self.dontclick(false);
 			self.currentBox().level(self.currentBox().level() + 1);
+			self.currentBox().round(1);
+			console.log('IS ROUDN 0 WORKING?')
+			level = self.currentBox().level();
 		}	
+		$('#box').stop();
+		$('#box').css('background' , 'red');
+		$('#screen').css('pointer-events', 'none')
+		self.dontclick(true);
+		$('#box').animate({
+			top: '0px',
+			left: '0px'
+		}, 2000, self.nextLevel);
+		console.log('current round' + round);
+		console.log('current level' + self.currentBox().level());
 	};
 	self.nextLevel = function() {
 		console.log('LEVEL UP');
@@ -152,10 +153,17 @@ var ViewModel = function() {
 		var randomColor = function() {
 		var r = safeColors[rand()];
 		var g = safeColors[rand()];
-		var b = safeColors[rand()];
+		var b = safeColors[2];
 		return "#"+r+g+b;
 		};
 		$('#box').css('background',randomColor());
+		console.log(level)
+		if(level == 2) {
+			width = height = 200;
+			speed = 1500;
+			distance = 0;
+			console.log('LEVEL TWO NOW')
+		}
 		width-= 25;
 		height-= 25;
 		speed-= 150;

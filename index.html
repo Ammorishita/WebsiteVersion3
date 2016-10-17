@@ -35,12 +35,13 @@
 					<button class="status">Box Status</button>
 					<div class="playermenu">
 						<div class="levels" data-bind="with: currentBox">
-							<li class="currentlevel">Current Level:</li>
+							<li class="currentlevel">Level:</li>
 							<li class="level" data-bind="text: level"></li>	
-							<li class="currentround">Current Round:</li>
+							<li class="currentround">Round:</li>
 							<li class="round" data-bind="text: round"></li>
-							<li class="currentpower">Current Item:</li>
-							<li class="item" data-bind="text: round"></li>
+							<li class="currentpower">Equipped:</li>
+							<li class="item" data-bind="">None</li>
+							<li class="enemy"></li>
 						</div>	
 					
 						<li data-bind="visible: level1">Got what it takes?</li>
@@ -59,7 +60,7 @@
 					<p class="warning" data-bind="visible: dontclick">DONT CLICK THE BOX</p>
 					<div id="box">
 					</div>
-					<div id="gameplay">
+					<div class="gameplayDisplay">
 						<h2>Box Clicker</h2>
 						<p>Welcome to Box Clicker! Click the moving box to advance to the next round. How far can you get?  Some say this game is impossible to beat.</p>
 						<h3>Bonus Objectives</h3>
