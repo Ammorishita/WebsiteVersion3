@@ -44,13 +44,25 @@
 #screen p {
 	text-align: center;
 }
-.currentlevel, .currentround, .currentpower {
-	background-color: green;
-	width: 150px;
-	height: 20px;
+.currentlevel, .currentround {
+	background-color: black;
+	border: 1px solid green;
+	width: 100px;
+	height: 40px;
 	text-align: center;
 	display: inline-block;
-	font-size: 20px;
+	font-size: 30px;
+	margin: 5px 0px 5px 5px;
+}
+.currentpower {
+	background-color: black;
+	border: 1px solid red;
+	width: 200px;
+	height: 40px;
+	text-align: center;
+	display: inline-block;
+	font-size: 30px;
+	margin: 5px auto;
 }
 .gameplayDisplay {
 	display: block;
@@ -72,6 +84,17 @@
 	opacity: 0.9;
 	visibility: visible;
 }
+.items {
+	background-color: black;
+	border: 1px dashed yellow;
+	width: 95px;
+	height: 30px;
+	text-align: center;
+	display: inline-block;
+	line-height: 30px;
+	font-size: 20px;
+	margin: 5px auto;
+}
 .levels {
 	display: flex;
 	flex-wrap: wrap;
@@ -88,18 +111,20 @@
 	position: relative;
 	top: 10px;
 }
-.level, .round, .item {
-	background-color: blue;
-	width: 60px;
-	height: 20px;
+.level, .round {
+	background-color: black;
+	border: 1px solid green;
+	width: 50px;
+	height: 40px;
 	text-align: center;
 	display: inline-block;
-	line-height: 20px;
-	font-size: 20px;
+	line-height: 40px;
+	font-size: 30px;
+	margin: 5px 5px;
 }
 .start, .gameplay , .status {
 	color: DodgerBlue;
-	background: linear-gradient(black, navy, black);
+	background: black;
 	width: 210px;
 	margin: 5px auto;
 	font-size: 2em;
@@ -108,6 +133,17 @@
 .start:hover, .gameplay:hover, .status:hover {
 	color: white;
 	border: 2px solid Dodgerblue;
+}
+.taunt {
+	width: 100px;
+	height: auto;
+	background-color: white;
+	color: black;
+	list-style-type: none;
+	position: absolute;
+	top: 250px;
+	left: 250px;
+	display: none;
 }
 .warning {
 	position: absolute;

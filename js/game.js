@@ -135,7 +135,8 @@ var ViewModel = function() {
 		}	
 		$('#box').stop();
 		$('#box').css('background' , 'red');
-		$('#screen').css('pointer-events', 'none')
+		$('#screen').css('pointer-events', 'none');
+		$('.taunt').css('display', 'block');
 		self.dontclick(true);
 		$('#box').animate({
 			top: '0px',
@@ -146,6 +147,7 @@ var ViewModel = function() {
 	};
 	self.nextLevel = function() {
 		console.log('LEVEL UP');
+		$('.taunt').css('display', 'none');
 		var safeColors = ['05','33','66','99','cc','dd'];
 		var rand = function() {
 		return Math.floor(Math.random()*6);
@@ -161,7 +163,7 @@ var ViewModel = function() {
 		if(level == 2) {
 			width = height = 200;
 			speed = 1500;
-			distance = 0;
+			distance = 25;
 			console.log('LEVEL TWO NOW')
 		}
 		width-= 25;

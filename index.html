@@ -40,10 +40,27 @@
 							<li class="currentround">Round:</li>
 							<li class="round" data-bind="text: round"></li>
 							<li class="currentpower">Equipped:</li>
-							<li class="item" data-bind="">None</li>
-							<li class="enemy"></li>
+							<li class="items" data-bind="">Speed</li>
+							<li class="items" data-bind="">Slow</li>
+							<li class="items" data-bind="">Visibility</li>
+							<li class="items" data-bind="">Randomize</li>
 						</div>	
-					
+				
+					</div>
+
+				</div>
+				<div id="screen">
+					<p class="warning" data-bind="visible: dontclick">DONT CLICK THE BOX</p>
+					<div id="box">
+					</div>
+					<div class="gameplayDisplay">
+						<h2>Box Clicker</h2>
+						<p>Welcome to Box Clicker! Click the moving box to advance to the next round. How far can you get?  Some say this game is impossible to beat.</p>
+						<h3>Bonus Items</h3>
+						<h3>Avoid</h3>
+					</div>
+										
+					<div class="taunt">
 						<li data-bind="visible: level1">Got what it takes?</li>
 						<li data-bind="visible: level2">Ok that was easy.</li>
 						<li data-bind="visible: level3">Is that box moving faster?</li>
@@ -54,17 +71,6 @@
 						<li data-bind="visible: level8">IMPOSSIBLE!!</li>
 						<li data-bind="visible: win">Wow, you won? That was just the first round.</li>
 						<li data-bind="visible: gameover">I knew you couldn't do it.</li>
-					</div>
-				</div>
-				<div id="screen">
-					<p class="warning" data-bind="visible: dontclick">DONT CLICK THE BOX</p>
-					<div id="box">
-					</div>
-					<div class="gameplayDisplay">
-						<h2>Box Clicker</h2>
-						<p>Welcome to Box Clicker! Click the moving box to advance to the next round. How far can you get?  Some say this game is impossible to beat.</p>
-						<h3>Bonus Objectives</h3>
-						<h3>Avoid</h3>
 					</div>
 					
 				</div>
