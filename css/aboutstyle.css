@@ -1,0 +1,48 @@
+.about {
+	width: 700px;
+	height: auto;
+	border: 2px solid Dodgerblue;
+	margin: auto;
+}
+.filter {
+	width: 225px;
+	height: 460px;
+	background-color: black;
+	border: 2px solid Dodgerblue;
+	margin: 15px 15px;
+}
+.learning, .proficient, .advanced {
+	width: 200px;
+	height: auto;
+	border: 2px solid Dodgerblue;
+	margin: 0 auto;
+}
+.line {
+	width: 675px;
+	height: 2px;
+	background-color: black;
+	margin: 15px auto;
+}
+.portfolio {
+	height: 700px;
+	width: 750px;
+	overflow: auto;
+	background-color: red;
+	text-align: center;
+}
+.skills {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 20px;
+}
+.skills li {
+	display: block;
+	padding: 3px;
+	margin: 5px;
+}
+.skillLevel li {
+	display: inline-block;
+	padding: 3px;
+	border-radius: 5px;
+	margin: 5px;
+}
