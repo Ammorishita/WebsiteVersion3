@@ -1,48 +1,58 @@
+@font-face {
+	font-family: "League";
+	src: url('league.otf');
+}
 html, body { 
 	margin: 0px; 
 	padding: 0px; 
-	border: 0px; 
+	border: 0px;
+	background: linear-gradient(navy, black);
+	height: 100%; 
 }
 
 header {
 	width: 1024px;
 	height: 125px;
-	background-color: green;
+	background-color: black;
 	margin: auto;
+	display: flex;
 }
 
 main section {
-	background-color: black;
 	width: 1024px;
-	height: 500px;
+	height: auto;
 	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 nav ul {
-	background-color: blue;
-	width: 1024px;
+	width: 700px;
 	height: auto;
-	margin: 0 auto;
+	margin: 40px auto;
 	text-align: center;
 	padding: 0;
+	display: block;
 }
 
 nav ul li {
-	background: linear-gradient(black, navy);
-	border: 2px solid black;
 	width: auto;
 	height: auto;
 	padding: 0px 5px;
-	font-size: 25px;
+	font-size: 40px;
+	color: Dodgerblue;
 	list-style-type: none;
 	display: inline-block;
 }
 
 nav ul li a {
 	text-decoration: none;
-	color: Skyblue;
-	font-family: arial;
+	color: Dodgerblue;
+	border: 1px solid black;
+	font-family: Arial;
+	padding: 2px;
 }
 nav ul li a:hover {
 	color: white;
+	border: 1px solid teal;
 }

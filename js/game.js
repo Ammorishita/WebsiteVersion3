@@ -37,11 +37,14 @@ var ViewModel = function() {
 	/// ---- ALL MENU FUNCTIONS --- ///
 
 	$('.gameplay').click(function() {
-		$('.gameplayDisplay').toggleClass('gameplayAnimate')	
+		$('.gameplayDisplay').fadeToggle();	
 	});
 
 	////////--------ALL GAME FUNCTIONS-------------////////
-
+	$('.slow').click(function(e) {
+			e.stopPropagation();
+		console.log('SLOW DOWN')
+	})
 	self.randomGenerate = function() {
 		number = Math.random();
 		console.log(number);
@@ -92,6 +95,11 @@ var ViewModel = function() {
 			console.log('moved down from top left');
 		}
 	};
+	self.slow = function() {
+		$('.slow').animate({
+			left: '500px'
+		}, speed)
+	}
 	self.right = function() {
 		$('#box').animate({
 			left: 500 + distance + 'px'

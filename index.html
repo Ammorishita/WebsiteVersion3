@@ -6,25 +6,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/gamestyle.css">
-	<script src="js/libs/jquery-3.1.0.min.js"></script>
-	<script src="js/libs/knockout.js"></script>
-	<script src="js/game.js"></script>
 </head>
 <body>
 
 	<header>
-	Put a picture here
-	</header>
-
+	<img src="images/logo.svg" height="125">
 	<nav>
 		<ul>
+			<li>{</li>
 			<li><a href="index.html">Home</a></li>
-			<li><a href="index.html">About</a></li>
-			<li><a href="index.html">Projects</a></li>
-			<li><a href="index.html">Gaming</a></li>
-			<li><a href="index.html">Contact</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="projects.html">Projects</a></li>
+			<li><a href="gaming.html">Gaming</a></li>
+			<li>}</li>
 		</ul>		
 	</nav>
+	</header>
 
 	<main>
 		<article>
@@ -32,7 +29,7 @@
 				<div id="menu">
 					<button class="start" data-bind="with: currentBox, click: $root.start, disable: started">Start</button>
 					<button class="gameplay">Gameplay</button>			
-					<button class="status">Box Status</button>
+					<button class="status">Music</button>
 					<div class="playermenu">
 						<div class="levels" data-bind="with: currentBox">
 							<li class="currentlevel">Level:</li>
@@ -53,13 +50,33 @@
 					<p class="warning" data-bind="visible: dontclick">DONT CLICK THE BOX</p>
 					<div id="box">
 					</div>
+					<!--<div class="speed"></div>
+					<div class="slow"></div>
+					<div class="random"></div>
+					<div class="visible"></div>-->
 					<div class="gameplayDisplay">
-						<h2>Box Clicker</h2>
-						<p>Welcome to Box Clicker! Click the moving box to advance to the next round. How far can you get?  Some say this game is impossible to beat.</p>
-						<h3>Bonus Items</h3>
-						<h3>Avoid</h3>
+						<div class="title">
+							<h2>Box Clicker</h2>
+						</div>
+						<div class="info">
+							<p>Welcome to Box Clicker! Click the moving box to advance to the next round. How far can you get?  Some say this game is impossible to beat. Successfully click a bonus item that appears to add it to your inventory. Be careful, as not all items will be helpful.</p>
+						</div>
+						<div class="equipped">
+							<h3>Bonus</h3>
+						</div>
+						<div class="equipped">
+							<h3>Avoid</h3>
+						</div>
+
+						<div class="bonus">
+							<h4>Bonus</h4>
+						</div>
+
+						<div class="avoid">
+							<h4>Avoid</h4>
+						</div>
 					</div>
-										
+
 					<div class="taunt">
 						<li data-bind="visible: level1">Got what it takes?</li>
 						<li data-bind="visible: level2">Ok that was easy.</li>
@@ -79,7 +96,9 @@
 	</main>
 
 	<footer>
-		
 	</footer>
+	<script src="js/libs/jquery-3.1.0.min.js"></script>
+	<script src="js/libs/knockout.js"></script>
+	<script src="js/game.js"></script>
 </body>
 </html>
