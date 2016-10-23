@@ -1,7 +1,6 @@
 .about {
 	width: 700px;
 	height: auto;
-	border: 2px solid Dodgerblue;
 	margin: auto;
 }
 .filter {
@@ -10,39 +9,64 @@
 	background-color: black;
 	border: 2px solid Dodgerblue;
 	margin: 15px 15px;
+	color: white;
+	text-align: center;
+}
+.filter li {
+	list-style-type: none;
+	background-color: blue;
+	margin: 10px auto;
+}
+.filter li a {
+	color: black;
+	text-decoration: none;
+}
+.filter li a:hover {
+	color: white;
 }
 .learning, .proficient, .advanced {
 	width: 200px;
 	height: auto;
-	border: 2px solid Dodgerblue;
 	margin: 0 auto;
+	list-style-type: none;
 }
 .line {
 	width: 675px;
 	height: 2px;
-	background-color: black;
+	background-color: Pink;
 	margin: 15px auto;
 }
 .portfolio {
 	height: 700px;
 	width: 750px;
 	overflow: auto;
-	background-color: red;
+	background-color: ;
 	text-align: center;
 }
-.skills {
-	display: flex;
-	flex-wrap: wrap;
-	margin-top: 20px;
+.portfolio a {
+	color: teal;
+	text-decoration: none;
 }
-.skills li {
-	display: block;
-	padding: 3px;
-	margin: 5px;
+.portfolio a:hover {
+	color: purple;
+}
+.portfolio p, h2, h3 {
+	color: white;
+}
+.skillsContainer {
+	width: 200px;
+	height: auto;
+	display: inline-block;
+	margin: 0 auto;
 }
 .skillLevel li {
 	display: inline-block;
 	padding: 3px;
 	border-radius: 5px;
-	margin: 5px;
+	margin: 5px auto 10px;
+	list-style-type: none;
+}
+.technical {
+	display: flex;
+	flex-wrap: wrap;
 }
