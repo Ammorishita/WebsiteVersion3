@@ -28,7 +28,53 @@
 			<section id="container">
 				<div class="filter">
 				</div>
-				</article>
+
+				<div class="extraContainer">
+					
+					<iframe id="mainVideo" width="560" height="315" src="https://www.youtube.com/embed/UrDzCpbrXgU" frameborder="20"></iframe>
+
+					<div class="videoContainer">
+
+						<div class="category">
+							<h2>Warcraft 3 : The Frozen Throne</h2>
+						</div>
+						<div class="videos">
+							<ul data-bind="foreach: FrozenThrone">
+								<div class="video-item" data-bind="click: $root.setVideo">
+				    				<li data-bind= "text: title"></li>
+				    				<img data-bind="attr: {src: img}" width="170" height="90">							
+								</div>	    
+			   				</ul>
+						</div>
+
+						<div class="category">
+							<h2>Warcraft 3 : Reign of Chaos</h2>
+						</div>
+						<div class="videos">
+							<ul data-bind="foreach: ReignofChaos">
+								<div class="video-item" data-bind="click: $root.setVideo">
+				    				<li data-bind= "text: title"></li>
+				    				<img data-bind="attr: {src: img}" height="95">							
+								</div>	    
+			   				</ul>
+						</div>
+
+						<div class="category">
+							<h2>Starcraft II : Legacy of the Void</h2>
+						</div>
+						<div class="videos">
+							<ul data-bind="foreach: Starcraft2">
+								<div class="video-item" data-bind="click: $root.setVideo">
+				    				<li data-bind= "text: title"></li>
+				    				<img data-bind="attr: {src: img}" height="95">							
+								</div>	    
+			   				</ul>
+						</div>
+
+					</div>
+
+				</div>
+					
 			</section>
 		</article>	
 	</main>
@@ -36,5 +82,8 @@
 	<footer>
 		
 	</footer>
+	<script src="js/libs/jquery-3.1.0.min.js"></script>
+	<script src="js/libs/knockout.js"></script>
+	<script src="js/extra.js"></script>
 </body>
 </html>

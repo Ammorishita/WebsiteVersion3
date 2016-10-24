@@ -1,3 +1,19 @@
+#mainVideo {
+	margin: auto;
+	display: block;
+	margin-top: 10px;
+}
+.category h2 {
+	color: white;
+	text-align: center;
+	border-bottom: 2px solid white;
+}
+.extraContainer {
+	width: 750px;
+	height: 810px;
+	overflow: auto;
+	margin: auto;
+}
 .filter {
 	width: 225px;
 	height: 460px;
@@ -18,4 +34,37 @@
 }
 .filter li a:hover {
 	color: white;
+}
+.videoContainer {
+	width: 725px;
+	height: 450px;
+	overflow: auto;
+	margin: auto;
+	margin-top: 20px;
+}
+.videos {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: justify;
+}
+.videos ul {
+	margin: auto;
+}
+.videos ul li {
+	background-color: rgb(9, 65, 98);
+	height: 40px;
+	width: 166px;
+	text-align: center;
+	list-style-type: none;
+	color: White;
+	padding: 2px;
+}
+.video-item {
+	border: 2px solid white;
+	display: inline-block;
+	margin: 10px auto;
+}
+.video-item:hover {
+	cursor: pointer;
+	border: 2px solid Dodgerblue;
 }
