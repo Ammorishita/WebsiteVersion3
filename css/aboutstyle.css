@@ -12,21 +12,34 @@
 }
 .filter li {
 	list-style-type: none;
-	background-color: blue;
 	margin: 10px auto;
+	font-size: 1.25em;
 }
 .filter li a {
-	color: black;
+	color: white;
 	text-decoration: none;
 }
 .filter li a:hover {
-	color: white;
+	color: Dodgerblue;
+	cursor: pointer;
 }
 .learning, .proficient, .advanced {
 	width: 200px;
 	height: auto;
 	margin: 0 auto;
 	list-style-type: none;
+}
+.advanced li a {
+	color: #0039e6;
+	text-decoration: underline;
+}
+.learning li a {
+	color: #00bfff;
+	text-decoration: underline;
+}
+.proficient li a {
+	color: #1a8cff;
+	text-decoration: underline;
 }
 .line {
 	width: 675px;

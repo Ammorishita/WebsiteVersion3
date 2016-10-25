@@ -15,6 +15,23 @@
 	width: 225px;
 	height: 460px;
 	margin: 15px 15px;
+	color: white;
+	text-align: center;
+}
+.filter li {
+	list-style-type: none;
+	margin: 10px auto;
+	transition: color 0.4s;
+	-webkit-transition: color 0.4s;
+	font-size: 1.25em;
+}
+.filter li a:hover {
+	color: Dodgerblue;
+	cursor: pointer;
+}
+.filter li a {
+	color: white;
+	text-decoration: none;
 }
 .github {
 	color: blue;
