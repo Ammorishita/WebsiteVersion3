@@ -12,15 +12,17 @@
 	color: black;
 }
 .filter {
-	width: 225px;
-	height: 460px;
-	margin: 15px 15px;
+	width: 100%;
+	height: auto;
 	color: white;
 	text-align: center;
+	margin-top: 25px;
+	background-color: green;
 }
 .filter li {
 	list-style-type: none;
-	margin: 10px auto;
+	margin: 10px 25px;
+	display: inline-block;
 	transition: color 0.4s;
 	-webkit-transition: color 0.4s;
 	font-size: 1.25em;
@@ -43,13 +45,13 @@
 .project {
 	width: 500px;
 	height: 430px;
-	border: 2px solid black;
-	margin: 50px auto;
 	text-align: center;
+	margin: auto;
+	border: 2px solid transparent;
 }
 .project:hover {
-	border: 2px solid Dodgerblue;
 	cursor: pointer;
+	border: 2px solid Dodgerblue;
 }
 .project h2 {
 	width: 500px;
@@ -68,9 +70,12 @@
 	margin: 0;
 }
 .portfolio {
-	height: 700px;
-	width: 750px;
+	height: 650px;
+	width: 100%;
 	overflow: auto;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: red;
 }
 .portfolio a {
 	text-decoration: none;
@@ -82,10 +87,11 @@
 }
 .skillset li {
 	width: auto;
-	background-color: white;
-	color: red;
+	background-color: black;
+	color: Dodgerblue;
 	list-style-type: none;
 	display: inline-block;
 	margin: 5px;
 	padding: 2px 3px;
+	font-family: Arial;
 }

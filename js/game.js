@@ -35,9 +35,9 @@ var ViewModel = function() {
 	self.currentBox = ko.observable(self.boxlist()[0]);
 
 	/// ---- ALL MENU FUNCTIONS --- ///
-
 	$('.gameplay').click(function() {
 		$('.gameplayDisplay').fadeToggle();	
+		$('.gameplayDisplay').css('display','flex');
 	});
 
 	////////--------ALL GAME FUNCTIONS-------------////////

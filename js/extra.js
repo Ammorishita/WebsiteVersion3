@@ -1,7 +1,4 @@
 $(document).ready(function() {
-	$('.video').click(function() {
-		document.getElementById("mainVideo").src = "https://www.youtube.com/embed/kJ0BKrvavXQ";
-	})
 })
 
 var Warcraft = [
@@ -59,7 +56,7 @@ var WarcraftFrozen = [
 	},
 	{
 		'title' : 'Dreadlord\'s Fall - Destroy Both Bases',
-		'src' : "https://www.youtube.com/embed/ocNJ4NCKnmk?list=PLiO0AAhYFKZSoLy7RgmY3RKOWS4r0hJTl?autoplay=1",
+		'src' : "https://www.youtube.com/embed/ocNJ4NCKnmk?autoplay=1",
 		'img' : "images/VideoImages/Dreadlord's Fall.png"		
 	},
 	{
@@ -129,6 +126,8 @@ var Videos = function(data) {
 
 var ViewModel = function() {
 	var self = this;
+	self.youtube = ko.observable(true);
+	self.cycling = ko.observable(false);
 	self.ReignofChaos = ko.observableArray([]);
 	self.FrozenThrone = ko.observableArray([]);
 	self.Starcraft2 = ko.observableArray([]);
@@ -145,7 +144,10 @@ var ViewModel = function() {
 		console.log(this.src);
 		var vid = document.getElementById("mainVideo");
 		vid.src = this.src;
-	}
+		var topPos = vid.offsetTop;
+		$('.extraContainer').animate({
+		    scrollTop: $("#mainVideo").offset().top
+		}, 500);	}
 };
 
 $(function() {

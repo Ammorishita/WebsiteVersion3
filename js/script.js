@@ -1,3 +1,3 @@
 $(document).ready(function() {
-	$("a").attr("target", "_blank");
+	$('a').not('.nav').attr('target','_blank')
 });

@@ -8,22 +8,30 @@
 	text-align: center;
 	border-bottom: 2px solid white;
 }
+.cycling {
+	width: 500px;
+	height: 500px;
+	background-color: black;
+	margin: auto;
+}
 .extraContainer {
-	width: 750px;
-	height: 810px;
+	width: 100%;
+	background-color: red;
+	height: 700px;
 	overflow: auto;
 	margin: auto;
 }
 .filter {
-	width: 225px;
-	height: 460px;
-	margin: 15px 15px;
+	width: 100%;
+	height: auto;
 	color: white;
+	background-color: green;
 	text-align: center;
 }
 .filter li {
 	list-style-type: none;
-	margin: 10px auto;
+	display: inline-block;
+	margin: 10px 15px;
 	transition: color 0.4s;
 	-webkit-transition: color 0.4s;
 	font-size: 1.25em;
@@ -40,16 +48,18 @@
 	color: white;
 }
 .videoContainer {
-	width: 725px;
-	height: 450px;
+	width: 100%;
+	height: auto;
 	overflow: auto;
 	margin: auto;
+	background-color: blue;
 	margin-top: 20px;
 }
 .videos {
 	display: flex;
 	flex-wrap: wrap;
-	text-align: justify;
+	width: 1024px;
+	margin: auto;
 }
 .videos ul {
 	margin: auto;

@@ -10,92 +10,98 @@
 <body>
 
 	<header>
-	<img src="images/logowhite.svg" height="125">
-	<nav>
-		<ul>
-			<li>{</li>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="about.html">About</a></li>
-			<li><a href="projects.html">Projects</a></li>
-			<li><a href="extra.html">Extra</a></li>
-			<li>}</li>
-		</ul>		
-	</nav>
+		<div class="wrapper">
+			<img src="images/logowhite.svg" height="125">
+			<nav>
+				<ul>
+					<li>{</li>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="projects.html">Projects</a></li>
+					<li><a href="extra.html">Extra</a></li>
+					<li>}</li>
+				</ul>		
+			</nav>
+		</div>
+
 	</header>
 
 	<main>
 		<article>
 			<section id="container">
-				<div id="menu">
-					<button class="start" data-bind="with: currentBox, click: $root.start, disable: started">Start</button>
-					<button class="gameplay">Gameplay</button>			
-					<button class="status">Music</button>
-					<div class="playermenu">
-						<div class="levels" data-bind="with: currentBox">
-							<li class="currentlevel">Level:</li>
-							<li class="level" data-bind="text: level"></li>	
-							<li class="currentround">Round:</li>
-							<li class="round" data-bind="text: round"></li>
-							<li class="currentpower">Equipped:</li>
-							<li class="items" data-bind="">Speed</li>
-							<li class="items" data-bind="">Slow</li>
-							<li class="items" data-bind="">Visibility</li>
-							<li class="items" data-bind="">Randomize</li>
-						</div>	
-				
-					</div>
-
-				</div>
-				<div id="screen">
-					<p class="warning" data-bind="visible: dontclick">DONT CLICK THE BOX</p>
-					<div id="box">
-					</div>
-					<!--<div class="speed"></div>
-					<div class="slow"></div>
-					<div class="random"></div>
-					<div class="visible"></div>-->
-					<div class="gameplayDisplay">
-						<div class="title">
-							<h2>Box Clicker</h2>
-						</div>
-						<div class="info">
-							<p>Welcome to Box Clicker! Click the moving box to advance to the next round. How far can you get?  Some say this game is impossible to beat. Successfully click a bonus item that appears to add it to your inventory. Be careful, as not all items will be helpful.</p>
-						</div>
-						<div class="equipped">
-							<h3>Bonus</h3>
-						</div>
-						<div class="equipped">
-							<h3>Avoid</h3>
-						</div>
-
-						<div class="bonus">
-							<h4>Bonus</h4>
-						</div>
-
-						<div class="avoid">
-							<h4>Avoid</h4>
-						</div>
-					</div>
-
-					<div class="taunt">
-						<li data-bind="visible: level1">Got what it takes?</li>
-						<li data-bind="visible: level2">Ok that was easy.</li>
-						<li data-bind="visible: level3">Is that box moving faster?</li>
-						<li data-bind="visible: level4">Still easy?</li>
-						<li data-bind="visible: level5">No way you will make it further.</li>
-						<li data-bind="visible: level6">Hehe..</li>
-						<li data-bind="visible: level7">Sigh..</li>
-						<li data-bind="visible: level8">IMPOSSIBLE!!</li>
-						<li data-bind="visible: win">Wow, you won? That was just the first round.</li>
-						<li data-bind="visible: gameover">I knew you couldn't do it.</li>
-					</div>
+				<div class="wrapper">
+					<div id="menu">
+						<button class="start" data-bind="with: currentBox, click: $root.start, disable: started">Start</button>
+						<button class="gameplay">Gameplay</button>			
+						<button class="status">Music</button>
+						<div class="playermenu">
+							<div class="levels" data-bind="with: currentBox">
+								<li class="currentlevel">Level:</li>
+								<li class="level" data-bind="text: level"></li>	
+								<li class="currentround">Round:</li>
+								<li class="round" data-bind="text: round"></li>
+								<li class="currentpower">Equipped:</li>
+								<li class="items" data-bind="">Speed</li>
+								<li class="items" data-bind="">Slow</li>
+								<li class="items" data-bind="">Visibility</li>
+								<li class="items" data-bind="">Randomize</li>
+							</div>	
 					
+						</div>
+
+					</div>
+					<div id="screen">
+						<p class="warning" data-bind="visible: dontclick">DONT CLICK THE BOX</p>
+						<div id="box">
+						</div>
+						<!--<div class="speed"></div>
+						<div class="slow"></div>
+						<div class="random"></div>
+						<div class="visible"></div>-->
+						<div class="gameplayDisplay">
+							<div class="title">
+								<h2>Box Clicker</h2>
+							</div>
+							<div class="info">
+								<p>Welcome to Box Clicker! Click the moving box to advance to the next round. How far can you get?  Some say this game is impossible to beat. Successfully click a bonus item that appears to add it to your inventory. Be careful, as not all items will be helpful.</p>
+							</div>
+							<div class="equipped">
+								<h3>Bonus</h3>
+							</div>
+							<div class="equipped">
+								<h3>Avoid</h3>
+							</div>
+
+							<div class="bonus">
+								<h4>Bonus</h4>
+							</div>
+
+							<div class="avoid">
+								<h4>Avoid</h4>
+							</div>
+						</div>
+
+						<div class="taunt">
+							<li data-bind="visible: level1">Got what it takes?</li>
+							<li data-bind="visible: level2">Ok that was easy.</li>
+							<li data-bind="visible: level3">Is that box moving faster?</li>
+							<li data-bind="visible: level4">Still easy?</li>
+							<li data-bind="visible: level5">No way you will make it further.</li>
+							<li data-bind="visible: level6">Hehe..</li>
+							<li data-bind="visible: level7">Sigh..</li>
+							<li data-bind="visible: level8">IMPOSSIBLE!!</li>
+							<li data-bind="visible: win">Wow, you won? That was just the first round.</li>
+							<li data-bind="visible: gameover">I knew you couldn't do it.</li>
+						</div>
+						
+					</div>
 				</div>
 			</section>
 		</article>	
 	</main>
 
 	<footer>
+		<p>Alex Morishita</p>
 	</footer>
 	<script src="js/libs/jquery-3.1.0.min.js"></script>
 	<script src="js/libs/knockout.js"></script>

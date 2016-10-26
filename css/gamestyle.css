@@ -75,7 +75,7 @@
 	background-color: purple;
 }
 .gameplayDisplay {
-	display: flex;
+	display: none;
 	flex-wrap: wrap;
 	color: white;
 	background-color: black;
