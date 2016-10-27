@@ -4,9 +4,12 @@
 	margin-top: 10px;
 }
 .category h2 {
-	color: white;
+	color: Dodgerblue;
 	text-align: center;
-	border-bottom: 2px solid white;
+	border-bottom: 2px solid Dodgerblue;
+	width: 1024px;
+	margin: 10px auto;
+	font-family: arial;
 }
 .cycling {
 	width: 500px;
@@ -14,18 +17,11 @@
 	background-color: black;
 	margin: auto;
 }
-.extraContainer {
-	width: 100%;
-	background-color: red;
-	height: 700px;
-	overflow: auto;
-	margin: auto;
-}
 .filter {
 	width: 100%;
 	height: auto;
 	color: white;
-	background-color: green;
+	background-color: ;
 	text-align: center;
 }
 .filter li {
@@ -52,17 +48,15 @@
 	height: auto;
 	overflow: auto;
 	margin: auto;
-	background-color: blue;
 	margin-top: 20px;
 }
 .videos {
-	display: flex;
-	flex-wrap: wrap;
 	width: 1024px;
 	margin: auto;
 }
 .videos ul {
-	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
 }
 .videos ul li {
 	background-color: rgb(9, 65, 98);
@@ -75,10 +69,15 @@
 }
 .video-item {
 	border: 2px solid white;
-	display: inline-block;
-	margin: 10px auto;
+	margin: 10px 15px;
 }
 .video-item:hover {
 	cursor: pointer;
 	border: 2px solid Dodgerblue;
+}
+.youtubeContainer {
+	width: 100%;
+	height: 700px;
+	overflow: auto;
+	margin: auto;
 }

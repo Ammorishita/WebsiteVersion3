@@ -16,8 +16,7 @@
 	height: auto;
 	color: white;
 	text-align: center;
-	margin-top: 25px;
-	background-color: green;
+	background-color: ;
 }
 .filter li {
 	list-style-type: none;
@@ -34,6 +33,12 @@
 .filter li a {
 	color: white;
 	text-decoration: none;
+	transition: color 0.4s;
+	-webkit-transition: color 0.4s;
+}
+.filter li a:hover {
+	color: Dodgerblue;
+	cursor: pointer;
 }
 .github {
 	color: blue;
@@ -75,7 +80,6 @@
 	overflow: auto;
 	display: flex;
 	flex-wrap: wrap;
-	background-color: red;
 }
 .portfolio a {
 	text-decoration: none;

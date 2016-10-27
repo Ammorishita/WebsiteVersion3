@@ -147,7 +147,7 @@ var ViewModel = function() {
 		var topPos = vid.offsetTop;
 		$('.extraContainer').animate({
 		    scrollTop: $("#mainVideo").offset().top
-		}, 500);	}
+		}, 500)};
 };
 
 $(function() {
