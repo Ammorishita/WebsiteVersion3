@@ -52,15 +52,15 @@
 	list-style-type: none;
 }
 .advanced li a {
-	color: #0039e6;
+	color: cyan;
 	text-decoration: underline;
 }
 .learning li a {
-	color: #00bfff;
+	color: #1a8cff;
 	text-decoration: underline;
 }
 .proficient li a {
-	color: #1a8cff;
+	color: #00bfff;
 	text-decoration: underline;
 }
 .line {
@@ -78,7 +78,7 @@
 	background-color: ;
 }
 .portfolio a {
-	color: teal;
+	color: dodgerblue;
 	text-decoration: none;
 }
 .portfolio a:hover {

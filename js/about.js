@@ -32,25 +32,30 @@ $('.biolink').click(function() {
 });
 
 $('.resumelink').click(function() {
-	$(this).css('pointer-events','none')
-	$('.biolink').css('pointer-events','none')
-	$('.contactlink').css('pointer-events','none')
-	setTimeout(function() {
-		$('.contactlink').css('pointer-events','auto')
-		$('.biolink').css('pointer-events','auto')
-	},500)
+	if($('.resume').hasClass('active')) {
+		console.log('has class')
+	} else {
+		$(this).css('pointer-events','none')
+		$('.biolink').css('pointer-events','none')
+		$('.contactlink').css('pointer-events','none')
+		setTimeout(function() {
+			$('.contactlink').css('pointer-events','auto')
+			$('.biolink').css('pointer-events','auto')
+		},500)
 
-	$('.resume').animate({
-		'left': '0px'
-	},500);
-	$('.active').animate({
-		'left': '700px'
-	},500, function() {
-		$('.active').css('left','-700px');
-		$('.resume').addClass('active');
-		$('.bio').removeClass('active');
-		$('.contact').removeClass('active');
-	});
+		$('.resume').animate({
+			'left': '0px'
+		},500);
+		$('.active').animate({
+			'left': '700px'
+		},500, function() {
+			$('.active').css('left','-700px');
+			$('.resume').addClass('active');
+			$('.bio').removeClass('active');
+			$('.contact').removeClass('active');
+		});
+	}
+
 });
 
 $('.contactlink').click(function() {

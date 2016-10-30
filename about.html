@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/aboutstyle.css">
+	<link rel="stylesheet" href="css/contactstyle.css">
 </head>
 <body>
 
@@ -40,7 +41,29 @@
 							<p>Some bio info</p>
 						</div>
 						<div class="contact">
-							<p>Some Contact info plz</p>
+							<form id="ajax-contact" method="post" action="mailer.php">
+							    <div class="field">
+							        <label for="name">Name:</label>
+							        <input type="text" id="name" name="name" required>
+							    </div>
+
+							    <div class="field">
+							        <label for="email">Email:</label>
+							        <input type="email" id="email" name="email" required>
+							    </div>
+
+							    <div class="field">
+							        <label for="message">Message:</label>
+							        <textarea id="message" name="message" required></textarea>
+							    </div>
+
+							    <div class="field">
+							        <button type="submit">Send</button>
+							    </div>
+							</form>
+							<div id="form-messages">
+								
+							</div>
 						</div>
 						<div class="resume">
 							<h3 style="color: Cyan">Education</h3>
@@ -61,37 +84,37 @@
 							<div class="technical">
 								<div class="skillsContainer">
 									<div class="skillLevel">
-										<li style="background-color: #00bfff">Learning</li>
+										<li style="background-color: #1a8cff">Learning</li>
 									</div>
 									<div class="learning">
-										<li style="color: #00bfff"><a href="http://www.w3schools.com/sql/">SQL</a></li>
-										<li style="color: #00bfff"><a href="http://www.w3schools.com/php/default.asp">PHP</a></li>
-										<li style="color: #00bfff"><a href="https://github.com/Ammorishita">Git/Github</a></li>
-										<li style="color: #00bfff"><a href="http://backbonejs.org/">Backbone</a></li>
-										<li style="color: #00bfff"><a href="http://jasmine.github.io/">Jasmine</a></li>
-										<li style="color: #00bfff"><a href="http://knockoutjs.com/">Knockout</a></li>
+										<li><a href="http://www.w3schools.com/sql/">SQL</a></li>
+										<li><a href="http://www.w3schools.com/php/default.asp">PHP</a></li>
+										<li><a href="https://github.com/Ammorishita">Git/Github</a></li>
+										<li><a href="http://backbonejs.org/">Backbone</a></li>
+										<li><a href="http://jasmine.github.io/">Jasmine</a></li>
+										<li><a href="http://knockoutjs.com/">Knockout</a></li>
 									</div>
 								</div>
 
 								<div class="skillsContainer">
 									<div class="skillLevel">
-										<li style="background-color: #1a8cff">Proficient</li>
+										<li style="background-color: #00bfff">Proficient</li>
 									</div>
 									<div class="proficient">
-										<li style="color: #1a8cff"><a href="http://www.w3schools.com/js/default.asp">Javascript</a></li>
-										<li style="color: #1a8cff"><a href="http://www.w3schools.com/css/default.asp">CSS</a></li>
-										<li style="color: #1a8cff"><a href="http://www.w3schools.com/html/">HTML</a></li>
-										<li style="color: #1a8cff"><a href="https://jquery.com/">jQuery</a></li>
-										<li style="color: #1a8cff"><a href="http://www.adobe.com/products/photoshop.html">Photoshop CC</a></li>
+										<li><a href="http://www.w3schools.com/js/default.asp">Javascript</a></li>
+										<li><a href="http://www.w3schools.com/css/default.asp">CSS</a></li>
+										<li><a href="http://www.w3schools.com/html/">HTML</a></li>
+										<li><a href="https://jquery.com/">jQuery</a></li>
+										<li><a href="http://www.adobe.com/products/photoshop.html">Photoshop CC</a></li>
 									</div>
 								</div>
 
 								<div class="skillsContainer">
 									<div class="skillLevel">
-										<li style="background-color: #0039e6">Advanced</li>
+										<li style="background-color: Cyan">Advanced</li>
 									</div>	
 									<div class="advanced">
-										<li style="color: #0039e6"><a href="http://www.adobe.com/products/illustrator.html">Illustrator CC</a></li>
+										<li><a href="http://www.adobe.com/products/illustrator.html">Illustrator CC</a></li>
 									</div>
 								</div>
 							</div>
@@ -109,6 +132,7 @@
 	</footer>
 	<script src="js/libs/jquery-3.1.0.min.js"></script>
 	<script src="js/about.js"></script>
+	<script src="js/contact.js"></script>
 	<script src="js/script.js"></script>
 </body>
 </html>
