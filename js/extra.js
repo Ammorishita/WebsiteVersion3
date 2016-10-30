@@ -1,5 +1,9 @@
 $(document).ready(function() {
-})
+
+});
+var slide = function() {
+		$('.about').hide();
+	}
 
 var Warcraft = [
 	{

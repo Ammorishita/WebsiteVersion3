@@ -1,7 +1,19 @@
-.about {
-	width: 1024px;
+.active, {
+}
+.hidden {
+	left: 100px;
+}
+.resume, .bio, .contact {
+	width: 700px;
 	height: auto;
 	margin: auto;
+	position: absolute;
+	left: -700px;
+	background-color: ;
+	text-decoration: none;
+}
+.resumelink, .biolink, .contactlink {
+	pointer-events: auto;
 }
 .filter {
 	width: 100%;
@@ -14,7 +26,14 @@
 	list-style-type: none;
 	margin: 10px 15px;
 	font-size: 1.25em;
+	color: white;
 	display: inline-block;
+	transition: color 0.4s;
+	-webkit-transition: color 0.4s;
+}
+.filter li:hover {
+	color: Dodgerblue;
+	cursor: pointer;
 }
 .filter li a {
 	color: white;
@@ -56,6 +75,7 @@
 	overflow: auto;
 	text-align: center;
 	margin: auto;
+	background-color: ;
 }
 .portfolio a {
 	color: teal;
@@ -79,6 +99,15 @@
 	border-radius: 5px;
 	margin: 5px auto 10px;
 	list-style-type: none;
+}
+.slideContainer {
+	width: 700px;
+	height: 650px;
+	background-color: ;
+	margin: auto;
+	overflow: hidden;
+	display: flex;
+	position: relative;
 }
 .technical {
 	display: flex;
