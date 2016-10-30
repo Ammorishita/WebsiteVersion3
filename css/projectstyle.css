@@ -1,15 +1,13 @@
 
 .description {
-	width: 500px;
-	background-color: white;
+	width: 100%;
+	background-color: ;
 	height: 80px;
 	display: block;
-	margin: 0;
-	color: black;
+	margin: auto;
+	margin-top: 5px;
+	color: red;
 	text-decoration: none;
-}
-.description a:visited {
-	color: black;
 }
 .filter {
 	width: 100%;
@@ -42,37 +40,45 @@
 }
 .github {
 	color: blue;
-	background-color: Yellow;
+	background-color: dodgerblue;
+	text-decoration: underline;
+	text-decoration-color: red;
+	display: inline;
 }
 .github:hover {
-	background-color: Dodgerblue;
+	color: white;
+	background-color: purple;
 }
 .project {
 	width: 500px;
-	height: 430px;
+	height: 435px;
 	text-align: center;
 	margin: auto;
 	border: 2px solid transparent;
+	transition: 1s;
+}
+.project a {
+	background-color: ;
 }
 .project:hover {
 	cursor: pointer;
 	border: 2px solid Dodgerblue;
 }
 .project h2 {
-	width: 500px;
+	width: 100%;
 	height: 40px;
-	background-color: rgb(9, 65, 98);
-	color: white;
+	background-color: ;
+	color: Dodgerblue;
 	line-height: 40px;
 	text-align: center;
 	display: block;
-	margin: 0;
+	margin: auto;
 }
 .project img {
-	width: 500px;
+	width: 100%;
 	height: 280px;
 	display: block;
-	margin: 0;
+	margin: 0 auto;
 }
 .portfolio {
 	height: 650px;
@@ -83,16 +89,17 @@
 }
 .portfolio a {
 	text-decoration: none;
+	color: Dodgerblue;
 }
 .skillset {
 	width: 500px;
 	height: 30px;
-	background-color: rgb(9, 65, 98);
+	margin: auto;
 }
 .skillset li {
 	width: auto;
 	background-color: black;
-	color: Dodgerblue;
+	color: purple;
 	list-style-type: none;
 	display: inline-block;
 	margin: 5px;
