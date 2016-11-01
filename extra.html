@@ -29,14 +29,11 @@
 		<article>
 			<section id="container">
 				<div class="filter">
-					<li>Youtube</li>
-					<li>Comic</li>
-					<li>Cycling</li>
-					<li>Artworks</li>
-					<li>Past Projects</li>
+					<li class="youtubeLink current">Youtube</li>
+					<li class="comicLink current">Comic</li>
+					<li class="artworksLink current">Artworks</li>
+					<li class="projectsLink current">Past Projects</li>
 				</div>
-				
-				<div class="cycling" data-bind="visible: cycling"></div>
 
 				<div class="youtubeContainer" data-bind="visible: youtube">					
 					<iframe id="mainVideo" width="560" height="315" src="https://www.youtube.com/embed/UrDzCpbrXgU" frameborder="20"></iframe>
@@ -80,6 +77,36 @@
 
 					</div>
 				</div>
+
+				<div class="comicContainer" data-bind="visible: comic">
+					<div class="comic" data-bind="">
+						<img id="currentComic" src="images/Comic/Ch4.png" width="1000" data-bind="">
+					</div>
+
+					<div class="comicNav">
+						<ul>
+							<li class="first" data-bind="click: $root.firstComic">First</li>
+							<li class="previous" data-bind="click: $root.previous">Previous</li>
+							<li class="archive">Archive</li>
+							<li class="next" data-bind="click: $root.next">Next</li>
+							<li class="last" data-bind="click: $root.lastComic">Last</li>
+						</ul>
+					</div>
+
+					<div class="archives">
+						<h3>Find a comic</h3>
+						<ul data-bind="foreach: Comics">
+							<li data-bind= "text: title, click: $root.setComic"></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="artworksContainer" data-bind="visible: artworks">
+					ARTWORKS!!
+				</div>
+				<div class="projectsContainer" data-bind="visible: projects">
+					PROJECTS!!
+				</div>
 					
 			</section>
 		</article>	
@@ -88,6 +115,7 @@
 	<footer>
 		<p>Alex Morishita</p>
 	</footer>
+	<link rel="stylesheet" href="css/extraComicStyle.css">
 	<script src="js/libs/jquery-3.1.0.min.js"></script>
 	<script src="js/libs/knockout.js"></script>
 	<script src="js/extra.js"></script>

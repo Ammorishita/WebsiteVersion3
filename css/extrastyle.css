@@ -4,11 +4,12 @@
 	margin-top: 10px;
 }
 .category h2 {
-	color: Dodgerblue;
+	color: Skyblue;
 	text-align: center;
-	border-bottom: 2px solid Dodgerblue;
+	border-bottom: 2px solid Skyblue;
 	width: 1024px;
 	margin: 10px auto;
+	margin-top: 20px;
 	font-family: arial;
 }
 .cycling {
@@ -53,29 +54,30 @@
 .videos {
 	width: 1024px;
 	margin: auto;
+	overflow: auto;
 }
 .videos ul {
 	display: flex;
-	flex-wrap: wrap;
 }
 .videos ul li {
-	background-color: rgb(9, 65, 98);
+	background-color: ;
 	height: 40px;
 	width: 166px;
 	text-align: center;
 	list-style-type: none;
-	color: White;
+	color: Skyblue;
 	padding: 2px;
+	transition: background-color 1s, color 1s;
 }
 .video-item {
-	border: 2px solid white;
+	border: 2px solid Dodgerblue;
 	margin: 10px 15px;
 }
 .video-item:hover {
 	cursor: pointer;
-	border: 2px solid Dodgerblue;
+	border: 2px solid Cyan;
 }
-.youtubeContainer {
+.youtubeContainer, .comicContainer {
 	width: 100%;
 	height: 700px;
 	overflow: auto;
