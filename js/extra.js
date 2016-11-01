@@ -4,7 +4,101 @@ $(document).ready(function() {
 	});
 });
 var comic, currentComic;
+var ArtworkList = [
+	{
+		'title' : 'Four Elements',
+		'img' : 'images/Artworks/4 Elements.jpg'
+	},
+	{
+		'title' : 'Beach Cycling',
+		'img' : 'images/Artworks/Beach Cycling.jpg'
+	},
+	{
+		'title' : 'Sniper Soldier',
+		'img' : 'images/Artworks/Sniper Soldier.jpg'
+	},
+	{
+		'title' : 'Snow Archer',
+		'img' : 'images/Artworks/Archer.png'
+	},
+];
+var GraphicList = [
+	{
+		'title' : 'Wolf Head Old',
+		'img' : 'images/Artworks/Wolf Head Old.jpg',
+		'height' : '400'
+	},
+	{
+		'title' : 'Wolf Head',
+		'img' : 'images/Artworks/Wolf Head.png',
+		'height' : '400'
+	},
+	{
+		'title' : 'Gladiator Old',
+		'img' : 'images/Artworks/Gladiator old.jpg',
+		'height' : '375'
+	},
+	{
+		'title' : 'Gladiator',
+		'img' : 'images/Artworks/gladiator.png',
+		'height' : '375'
+	},
+	{
+		'title' : 'Football Field Old',
+		'img' : 'images/Artworks/Football Field Old.jpg',
+		'height' : '300'
+	},
+	{
+		'title' : 'Football Field',
+		'img' : 'images/Artworks/Football Field.jpg',
+		'height' : '300'
+	},
+	{
+		'title' : 'DiamondDustersOld',
+		'img' : 'images/Artworks/DiamondDustersOld.jpg',
+		'height' : '235'
+	},
+	{
+		'title' : 'DiamondDusters',
+		'img' : 'images/Artworks/DiamondDusters.jpg',
+		'height' : '235'
+	},
+	{
+		'title' : 'Bison Old',
+		'img' : 'images/Artworks/Bison Old.jpg',
+		'height' : '400'
+	},
+	{
+		'title' : 'Bison',
+		'img' : 'images/Artworks/Bison.png',
+		'height' : '400'
+	},
+	{
+		'title' : 'Helmet Logo Old',
+		'img' : 'images/Artworks/Helmet Logo Old.jpg',
+		'height' : '350'
+	},
+	{
+		'title' : 'Helmet Logo',
+		'img' : 'images/Artworks/HelmetLogo.png',
+		'height' : '350'
+	},
+	{
+		'title' : 'Eagle NH old',
+		'img' : 'images/Artworks/eaglenewNHold.jpg',
+		'height' : '400'
+	},
+	{
+		'title' : 'Eagle Nh',
+		'img' : 'images/Artworks/eaglenewNH.png',
+		'height' : '400'
+	},
+];
 var ComicList = [
+	{
+		'title' : 'Chapter 1: Pest Control',
+		'src' : "images/Comic/Ch1.png"
+	},
 	{
 		'title' : 'Chapter 2: No Parking',
 		'src' : "images/Comic/Ch2.png"
@@ -143,20 +237,29 @@ var Videos = function(data) {
 var Comic = function(data) {
 	this.title = data.title;
 	this.src = data.src;
-}
+};
+var Artwork = function(data) {
+	this.title = data.title;
+	this.img = data.img;
+	this.height = data.height;
+};
 
 var ViewModel = function() {
 	var self = this;
 	comic = document.getElementById('currentComic')
 	currentComic = ComicList.length - 1;
 	self.youtube = ko.observable(false);
-	self.comic = ko.observable(true);
-	self.artworks = ko.observable(false);
+	self.comic = ko.observable(false);
+	self.artworks = ko.observable(true);
 	self.projects = ko.observable(false);
+	self.illustration = ko.observable(false);
+	self.vectors = ko.observable(true);
 	self.ReignofChaos = ko.observableArray([]);
 	self.FrozenThrone = ko.observableArray([]);
 	self.Starcraft2 = ko.observableArray([]);
 	self.Comics = ko.observableArray([]);
+	self.Artworks = ko.observableArray([]);
+	self.Graphics = ko.observableArray([]);
 	$('.current').click(function() {
 		self.youtube(false);
 		self.comic(false);
@@ -168,6 +271,27 @@ var ViewModel = function() {
 		if(currentClass == 'artworksLink current') {self.artworks(true);}
 		if(currentClass == 'projectsLink current') {self.projects(true);}
 	});
+	$('.illustrationLink').click(function() {
+		self.illustration(true);
+		self.vectors(false);
+		$('#artworksSubContainer').animate({
+		    scrollTop: 0
+		}, 0);
+	});
+	$('.graphicsLink').click(function() {
+		self.illustration(false);
+		self.vectors(true);
+		$('#graphicsSubContainer').animate({
+		    scrollTop: 0
+		}, 0);
+	});
+	ArtworkList.forEach(function(data) {
+		self.Artworks().push(new Artwork(data));
+	});
+	GraphicList.forEach(function(data) {
+		self.Graphics().push(new Artwork(data));
+	});
+	console.log(self.Artworks())
 	ComicList.forEach(function(data) {
 		self.Comics().push(new Comic(data));
 	});
@@ -213,7 +337,7 @@ var ViewModel = function() {
 		var vid = document.getElementById("mainVideo");
 		vid.src = this.src;
 		var topPos = vid.offsetTop;
-		$('.extraContainer').animate({
+		$('.youtubeContainer').animate({
 		    scrollTop: $("#mainVideo").offset().top
 		}, 500)
 	};

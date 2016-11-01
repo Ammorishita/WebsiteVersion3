@@ -102,7 +102,26 @@
 				</div>
 
 				<div class="artworksContainer" data-bind="visible: artworks">
-					ARTWORKS!!
+					<div class="adobe">
+						<li class="illustrationLink">Illustrations</li>
+						<li class="graphicsLink">Graphics</li>
+					</div>
+
+					<div id="artworksSubContainer" data-bind="visible: illustration">
+						<div class="artwork" data-bind="foreach: Artworks">
+							<img data-bind="attr: {src: img, alt: title}" height="500">
+						</div>
+					</div>
+
+					<div id="graphicsSubContainer" data-bind="visible: vectors">
+						<div class="graphics" data-bind="foreach: Graphics">
+							<div class="comparison">
+								<img data-bind="attr: {src: img, alt: title, height: height}">
+							</div>
+						</div>	
+					</div>
+					
+
 				</div>
 				<div class="projectsContainer" data-bind="visible: projects">
 					PROJECTS!!
@@ -116,6 +135,7 @@
 		<p>Alex Morishita</p>
 	</footer>
 	<link rel="stylesheet" href="css/extraComicStyle.css">
+	<link rel="stylesheet" href="css/artworkStyle.css">
 	<script src="js/libs/jquery-3.1.0.min.js"></script>
 	<script src="js/libs/knockout.js"></script>
 	<script src="js/extra.js"></script>

@@ -9,6 +9,7 @@ html, body {
 	background: linear-gradient(black, black, black, black, navy);
 	height: 100%;
 	width: 100%; 
+	background-repeat: no-repeat;
 }
 footer {
 	width: 100%;
