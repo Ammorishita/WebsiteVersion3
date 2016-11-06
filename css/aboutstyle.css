@@ -1,16 +1,38 @@
 .active, {
 }
+.chart {
+	background: rgba(15, 105, 205, .15);
+	width: 400px;
+	height: 375px;
+	margin: 25px 25px;
+}
+.chart h3 {
+	color: Skyblue;
+	background-color: ;
+	width: 75%;
+	margin: 10px auto;
+}
+.chart img {
+	margin: auto;
+}
 .hidden {
 	left: 100px;
 }
 .resume, .bio, .contact {
-	width: 700px;
-	height: auto;
+	width: 1024px;
+	height: 500px;
 	margin: auto;
 	position: absolute;
-	left: -700px;
+	left: -1024px;
 	background-color: ;
 	text-decoration: none;
+}
+.bio {
+	background-color: ;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	width: 100%;
 }
 .resumelink, .biolink, .contactlink {
 	pointer-events: auto;
@@ -101,13 +123,14 @@
 	list-style-type: none;
 }
 .slideContainer {
-	width: 700px;
-	height: 650px;
+	width: 1024px;
+	height: 700px;
 	background-color: ;
 	margin: auto;
-	overflow: hidden;
+	overflow: auto;
 	display: flex;
 	position: relative;
+	flex-wrap: wrap;
 }
 .technical {
 	display: flex;

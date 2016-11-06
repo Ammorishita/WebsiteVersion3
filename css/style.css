@@ -86,3 +86,6 @@ ul {
 	display: flex;
 	margin: auto;
 }
+.wrapper img {
+	height: 125px;
+}

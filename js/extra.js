@@ -25,7 +25,7 @@ var ArtworkList = [
 var GraphicList = [
 	{
 		'title' : 'Wolf Head Old',
-		'img' : 'images/Artworks/Wolf Head Old.jpg',
+		'img' : 'images/Artworks/Wolf Head Old.png',
 		'height' : '400'
 	},
 	{
@@ -35,12 +35,12 @@ var GraphicList = [
 	},
 	{
 		'title' : 'Gladiator Old',
-		'img' : 'images/Artworks/Gladiator old.jpg',
+		'img' : 'images/Artworks/Gladiator old.png',
 		'height' : '375'
 	},
 	{
 		'title' : 'Gladiator',
-		'img' : 'images/Artworks/gladiator.png',
+		'img' : 'images/Artworks/Gladiator.png',
 		'height' : '375'
 	},
 	{
@@ -55,17 +55,17 @@ var GraphicList = [
 	},
 	{
 		'title' : 'DiamondDustersOld',
-		'img' : 'images/Artworks/DiamondDustersOld.jpg',
+		'img' : 'images/Artworks/DiamondDustersOld.png',
 		'height' : '235'
 	},
 	{
 		'title' : 'DiamondDusters',
-		'img' : 'images/Artworks/DiamondDusters.jpg',
+		'img' : 'images/Artworks/DiamondDusters.png',
 		'height' : '235'
 	},
 	{
 		'title' : 'Bison Old',
-		'img' : 'images/Artworks/Bison Old.jpg',
+		'img' : 'images/Artworks/Bison Old.png',
 		'height' : '400'
 	},
 	{
@@ -75,7 +75,7 @@ var GraphicList = [
 	},
 	{
 		'title' : 'Helmet Logo Old',
-		'img' : 'images/Artworks/Helmet Logo Old.jpg',
+		'img' : 'images/Artworks/Helmet Logo Old.png',
 		'height' : '350'
 	},
 	{
@@ -85,7 +85,7 @@ var GraphicList = [
 	},
 	{
 		'title' : 'Eagle NH old',
-		'img' : 'images/Artworks/eaglenewNHold.jpg',
+		'img' : 'images/Artworks/eagle old.png',
 		'height' : '400'
 	},
 	{
@@ -291,11 +291,9 @@ var ViewModel = function() {
 	GraphicList.forEach(function(data) {
 		self.Graphics().push(new Artwork(data));
 	});
-	console.log(self.Artworks())
 	ComicList.forEach(function(data) {
 		self.Comics().push(new Comic(data));
 	});
-	console.log(self.Comics());
 	Warcraft.forEach(function(data){
 		self.ReignofChaos().push(new Videos(data));
 	});
@@ -308,7 +306,6 @@ var ViewModel = function() {
 	self.setComic = function() {
 		comic.src = this.src;
 		currentComic = ComicList.map(function(e) { return e.title; }).indexOf(this.title);
-		console.log(currentComic);
 	};
 
 	self.firstComic = function() {
@@ -336,10 +333,9 @@ var ViewModel = function() {
 		console.log(this.src);
 		var vid = document.getElementById("mainVideo");
 		vid.src = this.src;
-		var topPos = vid.offsetTop;
 		$('.youtubeContainer').animate({
-		    scrollTop: $("#mainVideo").offset().top
-		}, 500)
+		    scrollTop: 0
+		}, 500);
 	};
 };
 
