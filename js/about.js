@@ -1,13 +1,14 @@
 
 window.onload = function() {
-	$('.bio').css({
-		'left':'0px'
+	$('.resume').css({
+		'left':'0px',
+		'pointer-events':'none'
 	});
 	$('.slideContainer').css({
-		'overflow':'auto',
+		'overflow':'hidden',
 		'width' : '1000px'
 	});
-	$('.bio').addClass('active');
+	$('.resume').addClass('active');
 };
 var about = ['.bio','.resume','.contact'];
 
@@ -31,7 +32,7 @@ var chartList = [
 		'width' : '300'
 	},
 	{
-		'title' : 'Energy Use',
+		'title' : 'Home Energy Use',
 		'src' : 'images/Energy.svg',
 		'height' : '300',
 		'width' : '400'

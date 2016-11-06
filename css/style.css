@@ -84,8 +84,9 @@ ul {
 .wrapper {
 	width: 1024px;
 	display: flex;
+	flex-wrap: wrap;
 	margin: auto;
 }
 .wrapper img {
-	height: 125px;
+	height: ;
 }

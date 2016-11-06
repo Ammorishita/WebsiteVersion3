@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 #form-messages {
-  width: 70%;
+  width: 50%;
   margin: auto;
   display: block;
 }
@@ -33,7 +33,7 @@ label {
 }
 
 input {
-  width: 70%;
+  width: 50%;
   padding: 0.5em 0.5em;
   font-size: 1.2em;
   border-radius: 3px;
@@ -46,7 +46,7 @@ input:focus {
 }
 
 textarea {
-  width: 70%;
+  width: 50%;
   height: 200px;
   padding: 0.5em 0.5em;
   font-size: 1.2em;
@@ -70,7 +70,7 @@ button {
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
   margin: 0;
-  width: 70%;
+  width: 50%;
   text-align: center;
 }
 

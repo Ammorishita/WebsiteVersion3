@@ -49,17 +49,17 @@
 							<form id="ajax-contact" method="post" action="mailer.php">
 							    <div class="field">
 							        <label for="name">Name:</label>
-							        <input type="text" id="name" name="name" required>
+							        <input type="text" id="name" name="name" required maxlength="45">
 							    </div>
 
 							    <div class="field">
 							        <label for="email">Email:</label>
-							        <input type="email" id="email" name="email" required>
+							        <input type="email" id="email" name="email" required maxlength="80">
 							    </div>
 
 							    <div class="field">
 							        <label for="message">Message:</label>
-							        <textarea id="message" name="message" required></textarea>
+							        <textarea id="message" name="message" required maxlength="400"></textarea>
 							    </div>
 
 							    <div class="field">

@@ -38,7 +38,7 @@
 	height: 460px;
 	background-color: black;
 	border: 2px solid Dodgerblue;
-	margin: 15px 15px;
+	margin: 50px auto;
 	position: relative;
 }
 #screen p {
@@ -137,6 +137,35 @@
 	line-height: 40px;
 	font-size: 30px;
 	margin: 5px 5px;
+}
+.profile {
+	width: 1000px;
+	height: auto;
+	margin: 50px auto;
+	background-color: ;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.attribute {
+	color: Dodgerblue;
+	width: 400px;
+	background-color: ;
+	display: block;
+}
+.attribute p {
+	width: auto;
+	margin: 0px;
+	padding: 0px;
+	color: Dodgerblue;
+	text-align: left;
+	font-family: Lucida Sans Unicode;
+}
+.avatar {
+	width: 600px;
+	height: auto;
+	background-color: ;
 }
 .slow {
 	width: 75px;
