@@ -1,0 +1,220 @@
+#box {
+	width: 200px;
+	height: 200px;
+	background-color: purple;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+	display: none;
+	animation-play-state: running;
+}
+#container {
+	display: flex;
+	flex-wrap: wrap;
+}	
+#menu {
+	width: 225px;
+	height: 460px;
+	background-color: black;
+	border: 2px solid Dodgerblue;
+	margin: 15px 15px;
+}
+#menu li {
+	list-style-type: none;
+}
+#menu h3 {
+	color: black;
+	border: 2px solid blue;
+	background-color: white;
+	font-size: 2em;
+	margin: 10px;
+	float: left;
+	width: auto;
+	display: inline-block;
+}
+#screen {
+	width: 700px;
+	height: 460px;
+	background-color: black;
+	border: 2px solid Dodgerblue;
+	margin: 50px auto;
+	position: relative;
+}
+#screen p {
+	text-align: center;
+}
+.avoid, .bonus {
+	width: 240px;
+	background-color: red;
+	border: 5px solid blue;
+}
+.currentlevel, .currentround {
+	background-color: black;
+	border: 1px solid green;
+	width: 100px;
+	height: 40px;
+	text-align: center;
+	display: inline-block;
+	font-size: 30px;
+	margin: 5px 0px 5px 5px;
+	line-height: 40px;
+}
+.currentpower {
+	background-color: black;
+	border: 1px solid red;
+	width: 200px;
+	height: 40px;
+	text-align: center;
+	display: inline-block;
+	font-size: 30px;
+	margin: 5px auto;
+}
+.equipped {
+	width: 250px;
+	background-color: purple;
+}
+.gameplayDisplay {
+	display: none;
+	flex-wrap: wrap;
+	color: white;
+	background-color: black;
+	border: 2px solid Dodgerblue;
+	width: 500px;
+	height: 375px;
+	position: absolute;
+	top: 50px;
+	left: 100px;
+	z-index: 20;
+	text-align: center;
+	opacity: 0.9;
+	transition: height 0.5s;
+}
+.gameplayAnimate {
+	height: 350px;
+	border: 2px solid Dodgerblue;
+	opacity: 0.9;
+	visibility: visible;
+}
+.items {
+	background-color: black;
+	border: 1px dashed yellow;
+	width: 95px;
+	height: 30px;
+	text-align: center;
+	display: inline-block;
+	line-height: 30px;
+	font-size: 20px;
+	margin: 5px auto;
+}
+.info {
+	width: 500px;
+	background-color: orange;
+}
+.levels {
+	display: flex;
+	flex-wrap: wrap;
+}
+.playermenu {
+	width: 210px;
+	height: 250px;
+	background-color: black;
+	border: 2px solid Dodgerblue;
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+	color: white;
+	position: relative;
+	top: 10px;
+}
+.level, .round {
+	background-color: black;
+	border: 1px solid green;
+	width: 50px;
+	height: 40px;
+	text-align: center;
+	display: inline-block;
+	line-height: 40px;
+	font-size: 30px;
+	margin: 5px 5px;
+}
+.profile {
+	width: 1000px;
+	height: auto;
+	margin: 50px auto;
+	background-color: ;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.attribute {
+	color: Dodgerblue;
+	width: 400px;
+	background-color: ;
+	display: block;
+}
+.attribute p {
+	width: auto;
+	margin: 0px;
+	padding: 0px;
+	color: Dodgerblue;
+	text-align: left;
+	font-family: Lucida Sans Unicode;
+}
+.avatar {
+	width: 600px;
+	height: auto;
+	background-color: ;
+}
+.slow {
+	width: 75px;
+	height: 75px;
+	border: 1px solid red;
+	background-color: blue;
+	position: absolute;
+	top: 200px;
+}
+.speed {
+	width: 50px;
+	height: 50px;
+	border: 1px solid green;
+	background-color: black;
+}
+.start, .gameplay , .status {
+	color: DodgerBlue;
+	background: black;
+	width: 210px;
+	margin: 5px auto;
+	font-size: 2em;
+	display: table;
+}
+.start:hover, .gameplay:hover, .status:hover {
+	color: white;
+	border: 2px solid Dodgerblue;
+}
+.taunt {
+	width: 100px;
+	height: auto;
+	background-color: white;
+	color: black;
+	list-style-type: none;
+	position: absolute;
+	top: 250px;
+	left: 250px;
+	display: none;
+}
+.title {
+	width: 500px;
+	margin: 0 auto;
+	background-color: blue;
+}
+.warning {
+	position: absolute;
+	background-color: blue;
+	top: 200px;
+	left: 270px;
+	display: block;
+	z-index: 20;
+	color: white;
+}

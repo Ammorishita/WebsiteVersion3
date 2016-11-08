@@ -1,0 +1,48 @@
+.archives {
+	width: 1024px;
+	margin: auto;
+	margin-top: 25px;
+	text-align: center;
+	color: Cyan;
+	display: none;
+}
+.archives ul li {
+	color: Dodgerblue;
+	list-style-type: none;
+}
+.archives ul li:hover {
+	color: white;
+	cursor: pointer;
+}
+.comic {
+	width: 1024px;
+	background-color: white;
+	margin: auto;
+	margin-top: 25px;
+}
+.comicContainer {
+	margin-top: 50px;
+}
+.comicNav {
+	display: block;
+	background-color: ;
+	width: 1024px;
+	margin: auto;
+}
+.comicNav ul {
+	text-align: center;
+	margin-top: 10px;
+}
+.comicNav li {
+	display: inline-block;
+	width: 100px;
+	background-color: Dodgerblue;
+	color: black;
+	border-radius: 3px;
+	margin: 0px 10px;
+	font-size: 18px;
+}
+.comicNav li:hover {
+	cursor: pointer;
+	box-shadow: 0px 0px 2px 2px Dodgerblue;
+}

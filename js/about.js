@@ -1,8 +1,7 @@
 
 window.onload = function() {
 	$('.resume').css({
-		'left':'0px',
-		'pointer-events':'none'
+		'left':'0px'
 	});
 	$('.slideContainer').css({
 		'overflow':'hidden',

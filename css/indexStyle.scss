@@ -1,0 +1,37 @@
+.attribute {
+	color: Dodgerblue;
+	width: 400px;
+	display: block;
+	margin-top: 10px;
+	p {
+		width: auto;
+		margin: 0px;
+		padding: 0px;
+		color: Dodgerblue;
+		text-align: left;
+		font-family: Lucida Sans Unicode;		
+	}
+}
+.avatar {
+	width: 600px;
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+.character {
+	width: 280px;
+	color: white;
+	margin: 20px 5px 5px 0px;
+	p {
+		margin: 5px;
+		padding: 0px;
+	}
+}
+.profile {
+	width: 1000px;
+	height: auto;
+	margin: 50px auto;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+}
