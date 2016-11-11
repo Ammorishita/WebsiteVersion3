@@ -1,5 +1,5 @@
 
-window.onload = function() {
+/*window.onload = function() {
 	$('.resume').css({
 		'left':'0px'
 	});
@@ -8,6 +8,11 @@ window.onload = function() {
 		'width' : '1000px'
 	});
 	$('.resume').addClass('active');
+};*/
+window.onload = function() {
+	$('.resume').css({
+		'display':'auto'
+	});
 };
 var about = ['.bio','.resume','.contact'];
 
@@ -58,11 +63,35 @@ $(function() {
 	ko.applyBindings(new ViewModel());
 });
 
+$('.resumelink').click(function() {
+	$('.bio').slideUp();	
+	$('.contact').slideUp();
+	setTimeout(function() {
+		$('.resume').slideDown();
+	},250)
+});
+
 $('.biolink').click(function() {
+	$('.resume').slideUp();
+	$('.contact').slideUp();
+	setTimeout(function() {
+		$('.bio').slideDown();
+	},250)
+});
+
+$('.contactlink').click(function() {
+	$('.bio').slideUp();
+	$('.resume').slideUp();
+	setTimeout(function() {
+		$('.contact').slideDown();
+	},250)
+});
+
+/*$('.biolink').click(function() {
 	$(this).css('pointer-events','none')
 	$('.slideContainer').css({
 		'overflow':'auto',
-		'width' : '1000px'
+		'width' : '100%'
 	});
 	$('.resumelink').css('pointer-events','none')
 	$('.contactlink').css('pointer-events','none')
@@ -147,5 +176,5 @@ $('.contactlink').click(function() {
 		$('.bio').removeClass('active');
 		$('.resume').removeClass('active');
 	});
-});
+});*/
 

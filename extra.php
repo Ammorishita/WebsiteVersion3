@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="css/extrastyle.css">
 </head>
 <body>
-
 	<header>
 		<div class="wrapper">
 			<img src="images/logowhite.svg" height="125">
@@ -34,41 +33,38 @@
 					<li class="artworksLink current"><a href="artworks.html">Artworks</a></li>
 				</div>
 
-				<div class="artworksContainer" data-bind="visible: artworks">
-					<div class="adobe">
-						<li class="illustrationLink">Illustrations</li>
-						<li class="graphicsLink">Graphics</li>
+				<div class="comicContainer">
+				
+					<div class="comic">
+						<?php include 'comic/1.html'; ?>
 					</div>
 
-					<div id="artworksSubContainer" data-bind="visible: illustration">
-						<div class="artwork" data-bind="foreach: Artworks">
-							<img data-bind="attr: {src: img, alt: title}" height="500">
-						</div>
+					<div class="comicNav">
+						<ul>
+							<li class="first" data-bind="click: $root.firstComic">First</li>
+							<li class="previous" data-bind="click: $root.previous">Previous</li>
+							<li class="archive">Archive</li>
+							<li class="next" data-bind="click: $root.next">Next</li>
+							<li class="last" data-bind="click: $root.lastComic">Last</li>
+						</ul>
 					</div>
 
-					<div id="graphicsSubContainer" data-bind="visible: vectors">
-						<div class="graphics" data-bind="foreach: Graphics">
-							<div class="comparison">
-								<img data-bind="attr: {src: img, alt: title, height: height}">
-							</div>
-						</div>
-					</div>				
+					<div class="archives">
+						<h3>Find a comic</h3>
+						<ul data-bind="foreach: Comics">
+							<li data-bind= "text: title, click: $root.setComic"></li>
+						</ul>
+					</div>
 				</div>
-
+					
 			</section>
 		</article>	
 	</main>
 
 	<footer>
 		<p>Alex Morishita</p>
-				<!--<div class="illustrationBottomLink">
-					<p>Back to Top</p>
-				</div>
-				<div class="graphicsBottomLink">
-					<p>Back to Top</p>
-				</div>	-->
 	</footer>
-	<link rel="stylesheet" href="css/artworkStyle.css">
+	<link rel="stylesheet" href="css/extraComicStyle.css">
 	<script src="js/libs/jquery-3.1.0.min.js"></script>
 	<script src="js/libs/knockout.js"></script>
 	<script src="js/extra.js"></script>

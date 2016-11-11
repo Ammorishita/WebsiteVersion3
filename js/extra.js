@@ -26,32 +26,32 @@ var GraphicList = [
 	{
 		'title' : 'Wolf Head Old',
 		'img' : 'images/Artworks/Wolf Head Old.png',
-		'height' : '400'
+		'height' : '350'
 	},
 	{
 		'title' : 'Wolf Head',
 		'img' : 'images/Artworks/Wolf Head.png',
-		'height' : '400'
+		'height' : '350'
 	},
 	{
 		'title' : 'Gladiator Old',
 		'img' : 'images/Artworks/Gladiator old.png',
-		'height' : '375'
+		'height' : '320'
 	},
 	{
 		'title' : 'Gladiator',
 		'img' : 'images/Artworks/Gladiator.png',
-		'height' : '375'
+		'height' : '320'
 	},
 	{
 		'title' : 'Football Field Old',
 		'img' : 'images/Artworks/Football Field Old.jpg',
-		'height' : '300'
+		'height' : '250'
 	},
 	{
 		'title' : 'Football Field',
 		'img' : 'images/Artworks/Football Field.jpg',
-		'height' : '300'
+		'height' : '250'
 	},
 	{
 		'title' : 'DiamondDustersOld',
@@ -66,32 +66,32 @@ var GraphicList = [
 	{
 		'title' : 'Bison Old',
 		'img' : 'images/Artworks/Bison Old.png',
-		'height' : '400'
+		'height' : '350'
 	},
 	{
 		'title' : 'Bison',
 		'img' : 'images/Artworks/Bison.png',
-		'height' : '400'
+		'height' : '350'
 	},
 	{
 		'title' : 'Helmet Logo Old',
 		'img' : 'images/Artworks/Helmet Logo Old.png',
-		'height' : '350'
+		'height' : '300'
 	},
 	{
 		'title' : 'Helmet Logo',
 		'img' : 'images/Artworks/HelmetLogo.png',
-		'height' : '350'
+		'height' : '300'
 	},
 	{
 		'title' : 'Eagle NH old',
 		'img' : 'images/Artworks/eagle old.png',
-		'height' : '400'
+		'height' : '350'
 	},
 	{
 		'title' : 'Eagle Nh',
 		'img' : 'images/Artworks/eaglenewNH.png',
-		'height' : '400'
+		'height' : '350'
 	},
 ];
 var ComicList = [
@@ -284,6 +284,29 @@ var ViewModel = function() {
 		$('#graphicsSubContainer').animate({
 		    scrollTop: 0
 		}, 0);
+	});
+	$('.illustrationBottomLink').click(function() {
+		self.illustration(true);
+		self.vectors(false);
+		$('#artworksSubContainer').animate({
+		    scrollTop: 0
+		}, 0);
+	});
+	$('.graphicsBottomLink').click(function() {
+		self.illustration(false);
+		self.vectors(true);
+		$('#graphicsSubContainer').animate({
+		    scrollTop: 0
+		}, 0);
+	});
+	$("#graphicsSubContainer, #artworksSubContainer").scroll(function() {
+	   var offset = ($("#graphicsSubContainer").scrollTop());
+	   var offset2 = ($("#artworksSubContainer").scrollTop());  
+	   if(offset || offset2 > 0) {
+	   		$('.adobe').slideUp('fast');
+	   } else {
+	   		$('.adobe').show();
+	   }
 	});
 	ArtworkList.forEach(function(data) {
 		self.Artworks().push(new Artwork(data));

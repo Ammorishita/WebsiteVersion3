@@ -1,62 +1,76 @@
 .adobe {
-	margin: 10px auto;
-	background-color: ;
-	text-align: center;
-	position: ;
-}
-.adobe li {
-	display: inline;
-	list-style-type: none;
-	margin: 5px 50px;
-	font-size: 1.5em;
-	color: Dodgerblue;
-}
-.adobe li:hover {
-	cursor: pointer;
-	color: Skyblue;
-	box-shadow: 0px 0px 20px Cyan;
-}
+  margin: 20px auto;
+  text-align: center;
+  position: absolute;
+  top: 190px;
+  width: 100%; }
+  .adobe li {
+    display: inline;
+    list-style-type: none;
+    margin: 5px 50px;
+    font-size: 1.5em;
+    color: Dodgerblue; }
+    .adobe li:hover {
+      cursor: pointer;
+      color: Skyblue;
+      box-shadow: 0px 0px 20px Cyan; }
+
 .artwork {
-	width: 1024px;
-	height: auto;
-	margin: auto;
-	background-color: ;
-	display: block;
-}
-.artwork img {
-	margin: auto;
-	margin-top: 50px;
-	display: block;	
-	margin-bottom: 150px;
-}
+  width: 1024px;
+  height: auto;
+  margin: auto;
+  display: block; }
+  .artwork img {
+    margin: auto;
+    margin-top: 50px;
+    display: block;
+    margin-bottom: 150px; }
+
 .artworksContainer {
-	width: 100%;
-	height: 700px;
-	overflow: auto;
-	margin: auto;
-	margin-top: 20px;
-}
+  width: 100%;
+  height: 700px;
+  overflow: auto;
+  margin: auto;
+  margin-top: 20px; }
+
 .comparison {
-	width: 512px;
-	background-color: ;
-}
+  width: 512px; }
+
 .graphics {
-	width: 1024px;
-	height: auto;
-	margin: auto;
-	background-color: ;
-	display: flex;
-	flex-wrap: wrap;
-	text-align: center;
-}
-.graphics img {
-	margin: auto;
-	margin-top: 50px;	
-	margin-bottom: 150px;
-}
+  width: 1024px;
+  height: auto;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center; }
+  .graphics img {
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 150px; }
+
+.graphicsBottomLink p, .illustrationBottomLink p {
+  width: 100px;
+  height: 20px;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  transform: translate(-50%);
+  background-color: Dodgerblue;
+  color: white;
+  position: absolute;
+  bottom: 50px;
+  text-align: center; }
+  .graphicsBottomLink p:hover, .illustrationBottomLink p:hover {
+    cursor: pointer;
+    color: black; }
+
+.graphicsBottomLink {
+  left: 500px; }
+
 #artworksSubContainer, #graphicsSubContainer {
-	width: 100%;
-	height: 650px;
-	overflow: auto;
-	margin: auto;
-}
+  width: 100%;
+  height: 690px;
+  overflow: auto;
+  margin: auto; }
+
+/*# sourceMappingURL=artworkStyle.css.map */
