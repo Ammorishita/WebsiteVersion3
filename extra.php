@@ -1,72 +1,69 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Website Lets Try Again</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/extrastyle.css">
-</head>
-<body>
-	<header>
-		<div class="wrapper">
-			<img src="images/logowhite.svg" height="125">
-			<nav>
-				<ul>
-					<li>{</li>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="projects.html">Projects</a></li>
-					<li><a href="extra.html">Extra</a></li>
-					<li>}</li>
-				</ul>		
-			</nav>
-		</div>
-	</header>
 
-	<main>
-		<article>
-			<section id="container">
-				<div class="filter">
-					<li class="youtubeLink current"><a href="gaming.html">Gaming</a></li>
-					<li class="comicLink current"><a href="extra.html">Comic</a></li>
-					<li class="artworksLink current"><a href="artworks.html">Artworks</a></li>
-				</div>
+<?PHP
+  $NUMPERPAGE = 20; // max. number of items to display per page
+  $this_page = "/extra.php/";
+  $data = range(1, 150); // data array to be paginated
+  $num_results = count($data);
+?>
+<?PHP
+  # Original PHP code by Chirp Internet: www.chirp.com.au
+  # Please acknowledge use of this code by including this header.
 
-				<div class="comicContainer">
-				
-					<div class="comic">
-						<?php include 'comic/1.html'; ?>
-					</div>
+  if(!isset($_GET['page']) || !$page = intval($_GET['page'])) $page = 1;
 
-					<div class="comicNav">
-						<ul>
-							<li class="first" data-bind="click: $root.firstComic">First</li>
-							<li class="previous" data-bind="click: $root.previous">Previous</li>
-							<li class="archive">Archive</li>
-							<li class="next" data-bind="click: $root.next">Next</li>
-							<li class="last" data-bind="click: $root.lastComic">Last</li>
-						</ul>
-					</div>
+  // extra variables to append to navigation links (optional)
+  $linkextra = [];
+  if(isset($_GET['var1']) && $var1 = $_GET['var1']) { // repeat as needed for each extra variable
+    $linkextra[] = "var1=" . urlencode($var1);
+  }
+  $linkextra = implode("&amp;", $linkextra);
+  if($linkextra) $linkextra .= "&amp;";
 
-					<div class="archives">
-						<h3>Find a comic</h3>
-						<ul data-bind="foreach: Comics">
-							<li data-bind= "text: title, click: $root.setComic"></li>
-						</ul>
-					</div>
-				</div>
-					
-			</section>
-		</article>	
-	</main>
+  // build array containing links to all pages
+  $tmp = [];
+  for($p=1, $i=0; $i < $num_results; $p++, $i += $NUMPERPAGE) {
+    if($page == $p) {
+      // current page shown as bold, no link
+      $tmp[] = "<b>{$p}</b>";
+    } else {
+      $tmp[] = "<a href=\"{$this_page}?{$linkextra}page={$p}\">{$p}</a>";
+    }
+  }
 
-	<footer>
-		<p>Alex Morishita</p>
-	</footer>
-	<link rel="stylesheet" href="css/extraComicStyle.css">
-	<script src="js/libs/jquery-3.1.0.min.js"></script>
-	<script src="js/libs/knockout.js"></script>
-	<script src="js/extra.js"></script>
-</body>
-</html>
+  // thin out the links (optional)
+  for($i = count($tmp) - 3; $i > 1; $i--) {
+    if(abs($page - $i - 1) > 2) {
+      unset($tmp[$i]);
+    }
+  }
+
+  // display page navigation iff data covers more than one page
+  if(count($tmp) > 1) {
+    echo "<p>";
+
+    if($page > 1) {
+      // display 'Prev' link
+      echo "<a href=\"{$this_page}?{$linkextra}page=" . ($page - 1) . "\">&laquo; Prev</a> | ";
+    } else {
+      echo "Page ";
+    }
+
+    $lastlink = 0;
+    foreach($tmp as $i => $link) {
+      if($i > $lastlink + 1) {
+        echo " ... "; // where one or more links have been omitted
+      } elseif($i) {
+        echo " | ";
+      }
+      echo $link;
+      $lastlink = $i;
+    }
+
+    if($page <= $lastlink) {
+      // display 'Next' link
+      echo " | <a href=\"{$this_page}?{$linkextra}page=" . ($page + 1) . "\">Next &raquo;</a>";
+    }
+
+    echo "</p>\n\n";
+  }
+?>

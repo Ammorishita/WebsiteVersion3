@@ -1,3 +1,7 @@
+#container {
+  margin: auto;
+}
+
 #mainVideo {
   margin: auto;
   display: block;

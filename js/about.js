@@ -10,8 +10,9 @@
 	$('.resume').addClass('active');
 };*/
 window.onload = function() {
-	$('.resume').css({
-		'display':'auto'
+	$('.bio').slideDown();
+	$('.bio').css({
+		'display':'flex'
 	});
 };
 var about = ['.bio','.resume','.contact'];
@@ -69,6 +70,12 @@ $('.resumelink').click(function() {
 	setTimeout(function() {
 		$('.resume').slideDown();
 	},250)
+	$('.biolink').css('pointer-events','none')
+	$('.contactlink').css('pointer-events','none')
+	setTimeout(function() {
+		$('.biolink').css('pointer-events','auto')
+		$('.contactlink').css('pointer-events','auto')
+	},500);
 });
 
 $('.biolink').click(function() {
@@ -77,6 +84,12 @@ $('.biolink').click(function() {
 	setTimeout(function() {
 		$('.bio').slideDown();
 	},250)
+	$('.resumelink').css('pointer-events','none')
+	$('.contactlink').css('pointer-events','none')
+	setTimeout(function() {
+		$('.resumelink').css('pointer-events','auto')
+		$('.contactlink').css('pointer-events','auto')
+	},500);
 });
 
 $('.contactlink').click(function() {
@@ -85,6 +98,12 @@ $('.contactlink').click(function() {
 	setTimeout(function() {
 		$('.contact').slideDown();
 	},250)
+	$('.biolink').css('pointer-events','none')
+	$('.resumelink').css('pointer-events','none')
+	setTimeout(function() {
+		$('.resumelink').css('pointer-events','auto')
+		$('.biolink').css('pointer-events','auto')
+	},500);
 });
 
 /*$('.biolink').click(function() {

@@ -3,7 +3,7 @@ $(document).ready(function() {
 		$('.archives').fadeToggle();
 	});
 });
-var comic, currentComic;
+var comic, currentComic, $, ko;
 var ArtworkList = [
 	{
 		'title' : 'Four Elements',
@@ -111,7 +111,7 @@ var ComicList = [
 		'title' : 'Chapter 4: Hard to See',
 		'src' : "images/Comic/Ch4.png"
 	},
-]
+];
 var Warcraft = [
 	{
 		'title' : 'March of the Scourge - Destroy All Enemies',
@@ -246,7 +246,7 @@ var Artwork = function(data) {
 
 var ViewModel = function() {
 	var self = this;
-	comic = document.getElementById('currentComic')
+	comic = document.getElementById('currentComic');
 	currentComic = ComicList.length - 1;
 	self.youtube = ko.observable(true);
 	self.comic = ko.observable(true);
@@ -265,7 +265,7 @@ var ViewModel = function() {
 		self.comic(false);
 		self.artworks(false);
 		self.projects(false);
-		var currentClass = ($(this).attr("class"))
+		var currentClass = ($(this).attr("class"));
 		if(currentClass == 'youtubeLink current') {self.youtube(true);}
 		if(currentClass == 'comicLink current') {self.comic(true);}
 		if(currentClass == 'artworksLink current') {self.artworks(true);}
@@ -299,15 +299,26 @@ var ViewModel = function() {
 		    scrollTop: 0
 		}, 0);
 	});
+	/*
 	$("#graphicsSubContainer, #artworksSubContainer").scroll(function() {
 	   var offset = ($("#graphicsSubContainer").scrollTop());
 	   var offset2 = ($("#artworksSubContainer").scrollTop());  
 	   if(offset || offset2 > 0) {
 	   		$('.adobe').slideUp('fast');
+	   		$('.topGraphics').fadeIn();
+	   		$('.topArtworks').fadeIn();
 	   } else {
 	   		$('.adobe').show();
+	   		$('.topGraphics').fadeOut();
+	   		$('.topArtworks').fadeOut();
 	   }
-	});
+	   $('.topGraphics').click(function() {
+	   		$("#graphicsSubContainer").scrollTop(0);
+	   });
+	   $('.topArtworks').click(function() {
+	   		$("#artworksSubContainer").scrollTop(0);
+	   });
+	});*/
 	ArtworkList.forEach(function(data) {
 		self.Artworks().push(new Artwork(data));
 	});
@@ -326,6 +337,11 @@ var ViewModel = function() {
 	Starcraft2.forEach(function(data){
 		self.Starcraft2().push(new Videos(data));
 	});
+	self.ajax = function() {
+		$.get( "comic/1.html", function( data ) {
+		  $( ".comic" ).html( data );
+		});
+	};
 	self.setComic = function() {
 		comic.src = this.src;
 		currentComic = ComicList.map(function(e) { return e.title; }).indexOf(this.title);
@@ -347,7 +363,7 @@ var ViewModel = function() {
 		}
 	};
 	self.previous = function() {
-		if (currentComic == 0) {} else {
+		if (currentComic === 0) {} else {
 			currentComic--;
 			comic.src = ComicList[currentComic].src;
 		}
@@ -364,4 +380,4 @@ var ViewModel = function() {
 
 $(function() {
 	ko.applyBindings(new ViewModel());
-})
+});

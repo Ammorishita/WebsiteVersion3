@@ -27,7 +27,7 @@
 	text-decoration: none;
 }
 .bio {
-	display: flex;
+	display: none;
 	justify-content: space-around;
 	flex-wrap: wrap;
 	width: 100%;
@@ -139,5 +139,9 @@
 	display: flex;
 	flex-wrap: wrap;
 	width: 700px;
+	margin: auto;
+}
+#container {
+	width: 100%;
 	margin: auto;
 }

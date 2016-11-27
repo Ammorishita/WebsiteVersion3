@@ -1,42 +1,53 @@
-.attribute {
-  color: Dodgerblue;
-  width: 400px;
-  display: block;
-  margin-top: 10px;
-}
-.attribute p {
-  width: auto;
-  margin: 0px;
-  padding: 0px;
-  color: Dodgerblue;
-  text-align: left;
-  font-family: Lucida Sans Unicode;
-}
-
-.avatar {
-  width: 600px;
-  height: auto;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.character {
-  width: 280px;
+.navigation {
+  background-color: black;
   color: white;
-  margin: 20px 5px 5px 0px;
-}
-.character p {
-  margin: 5px;
-  padding: 0px;
-}
-
-.profile {
-  width: 1000px;
-  height: auto;
-  margin: 50px auto;
+  width: 150px;
+  height: 75px;
   text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-}
+  outline-offset: 2px;
+  font-size: 2em;
+  line-height: 75px;
+  display: none; }
+  .navigation a {
+    text-decoration: none;
+    color: white; }
+  .navigation.about {
+    border: 2px solid #003d99;
+    outline: 2px solid #0066ff; }
+    .navigation.about:hover {
+      -webkit-box-shadow: 0px 0px 35px 13px #003d99;
+      -moz-box-shadow: 0px 0px 35px 13px #003d99;
+      box-shadow: 0px 0px 35px 13px #003d99;
+      cursor: pointer; }
+  .navigation.extra {
+    border: 2px solid #000099;
+    outline: 2px solid blue; }
+    .navigation.extra:hover {
+      -webkit-box-shadow: 0px 0px 35px 13px #000099;
+      -moz-box-shadow: 0px 0px 35px 13px #000099;
+      box-shadow: 0px 0px 35px 13px #000099;
+      cursor: pointer; }
+  .navigation.projects {
+    border: 2px solid Dodgerblue;
+    outline: 2px solid Cyan; }
+    .navigation.projects:hover {
+      cursor: pointer;
+      -webkit-box-shadow: 0px 0px 35px 13px rgba(0, 146, 214, 0.98);
+      -moz-box-shadow: 0px 0px 35px 13px rgba(0, 146, 214, 0.98);
+      box-shadow: 0px 0px 35px 13px rgba(0, 146, 214, 0.98); }
+
+#container {
+  width: 800px;
+  height: 250px;
+  position: relative;
+  margin: auto;
+  display: flex; }
+  #container ul {
+    margin: auto; }
+  #container li {
+    list-style-type: none;
+    padding: 0;
+    display: none;
+    margin: 0px 25px; }
 
 /*# sourceMappingURL=indexStyle.css.map */

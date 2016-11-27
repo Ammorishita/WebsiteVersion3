@@ -11,7 +11,6 @@
 
 	<header>
 		<div class="wrapper">
-			<img src="images/logowhite.svg" height="125">
 			<nav>
 				<ul>
 					<li>{</li>
@@ -44,6 +43,10 @@
 						<div class="artwork" data-bind="foreach: Artworks">
 							<img data-bind="attr: {src: img, alt: title}" height="500">
 						</div>
+						<div class="topArtworks">
+							<p>/\</p>
+							<p>Top</p>
+						</div>
 					</div>
 
 					<div id="graphicsSubContainer" data-bind="visible: vectors">
@@ -51,6 +54,10 @@
 							<div class="comparison">
 								<img data-bind="attr: {src: img, alt: title, height: height}">
 							</div>
+						</div>
+						<div class="topGraphics">
+							<p>/\</p>
+							<p>Top</p>
 						</div>
 					</div>				
 				</div>
