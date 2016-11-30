@@ -1,3 +1,68 @@
+object, svg {
+	position: absolute;
+	width: 600px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%)
+}
+path, line, polyline {
+    stroke-width: 2;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: draw;
+    animation-timing-function: linear;
+    &#first {
+      stroke: Dodgerblue;
+      stroke-dasharray: 800;
+      stroke-dashoffset: 800;
+      animation-duration: 15s;
+      &.glasses {
+      	stroke: #00ffcc;
+      }
+    }
+    &#second {
+      stroke: red;
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      animation-duration: 35s;
+    }
+}
+circle {
+    stroke-width: 2;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-name: draw;
+    fill: transparent;
+    animation-timing-function: linear;
+    &.path{
+      stroke: red;
+      stroke-dasharray: 3500;
+      stroke-dashoffset: 3500;
+      animation-duration: 11s;
+    }
+}
+polygon {
+	stroke-width: 2;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-name: draw;
+    animation-timing-function: linear;
+    &#first {
+      stroke: Dodgerblue;
+      stroke-dasharray: 3500;
+      stroke-dashoffset: 3500;
+      animation-duration: 35s;
+    }
+}
+@keyframes draw {
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+header, footer {
+	opacity: 0;
+}
 .navigation {
 	background-color: black;
 	color: white;

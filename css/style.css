@@ -17,7 +17,8 @@ footer {
   height: 5%;
   background-color: Dodgerblue;
   color: black;
-  text-align: center; }
+  text-align: center;
+  opacity: 0; }
 
 header {
   width: 100%;

@@ -1,19 +1,11 @@
-
-/*window.onload = function() {
-	$('.resume').css({
-		'left':'0px'
-	});
-	$('.slideContainer').css({
-		'overflow':'hidden',
-		'width' : '1000px'
-	});
-	$('.resume').addClass('active');
-};*/
 window.onload = function() {
 	$('.bio').slideDown();
 	$('.bio').css({
 		'display':'flex'
 	});
+	$('header, footer').animate({
+		'opacity': '1'
+	},500)
 };
 var about = ['.bio','.resume','.contact'];
 

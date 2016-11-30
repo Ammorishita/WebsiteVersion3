@@ -2,6 +2,9 @@ $(document).ready(function() {
 	$('.archive').click(function() {
 		$('.archives').fadeToggle();
 	});
+	$('header, footer').animate({
+		'opacity': '1'
+	},500)
 });
 var comic, currentComic, $, ko;
 var ArtworkList = [
@@ -299,7 +302,7 @@ var ViewModel = function() {
 		    scrollTop: 0
 		}, 0);
 	});
-	/*
+	
 	$("#graphicsSubContainer, #artworksSubContainer").scroll(function() {
 	   var offset = ($("#graphicsSubContainer").scrollTop());
 	   var offset2 = ($("#artworksSubContainer").scrollTop());  
@@ -318,7 +321,7 @@ var ViewModel = function() {
 	   $('.topArtworks').click(function() {
 	   		$("#artworksSubContainer").scrollTop(0);
 	   });
-	});*/
+	});
 	ArtworkList.forEach(function(data) {
 		self.Artworks().push(new Artwork(data));
 	});

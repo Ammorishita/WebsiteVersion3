@@ -7,10 +7,11 @@ window.onload = function() {
 			});			
 		}, 50);
 	};
-
 	$('.navigation').fadeIn(1500);
+	$('svg').show();
+	$('path, line, polyline').attr('id', 'first');
+	$('#text').load("test.html")
 };
-
 $('.projects, .extra, .about').click(function() {
 	$('#container').animate({
 		'opacity': '0'

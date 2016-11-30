@@ -3,4 +3,7 @@ window.onload = function(){
 	$('.portfolio').css({
 		'display':'flex'
 	});
+	$('header, footer, .filter').animate({
+		'opacity': '1'
+	},500)
 };
