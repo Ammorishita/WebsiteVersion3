@@ -20,39 +20,6 @@ path, line, polyline {
       	stroke: #00ffcc;
       }
     }
-    &#second {
-      stroke: red;
-      stroke-dasharray: 500;
-      stroke-dashoffset: 500;
-      animation-duration: 35s;
-    }
-}
-circle {
-    stroke-width: 2;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-    animation-name: draw;
-    fill: transparent;
-    animation-timing-function: linear;
-    &.path{
-      stroke: red;
-      stroke-dasharray: 3500;
-      stroke-dashoffset: 3500;
-      animation-duration: 11s;
-    }
-}
-polygon {
-	stroke-width: 2;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-    animation-name: draw;
-    animation-timing-function: linear;
-    &#first {
-      stroke: Dodgerblue;
-      stroke-dasharray: 3500;
-      stroke-dashoffset: 3500;
-      animation-duration: 35s;
-    }
 }
 @keyframes draw {
   100% {
@@ -107,6 +74,11 @@ header, footer {
 			box-shadow: 0px 0px 35px 13px rgba(0,146,214,0.98);
 		};
 	}
+}
+#chair {
+	background-color: black;
+	width: 30%;
+	left: 200px;
 }
 #container {
 	width: 800px;

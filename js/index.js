@@ -10,7 +10,12 @@ window.onload = function() {
 	$('.navigation').fadeIn(1500);
 	$('svg').show();
 	$('path, line, polyline').attr('id', 'first');
-	$('#text').load("test.html")
+	function svg() {
+		setTimeout(function() {
+			$('#chair').attr('data', 'images/path.svg');
+		},1500)
+	}
+	svg();
 };
 $('.projects, .extra, .about').click(function() {
 	$('#container').animate({
@@ -19,10 +24,19 @@ $('.projects, .extra, .about').click(function() {
 	var classes = $(this).attr('class').split(' ');
 	var currentClass = classes[1];
 	var location = currentClass + '.html';
-	time();
-	function time() {
-		setTimeout(function() {
-			window.location.href = location;
-		},1000);			
-	};
+	if(location = 'extra.html') {
+		time();
+		function time() {
+			setTimeout(function() {
+				window.location.href = 'comic/4.php';
+			},1000);			
+		};
+	} else {
+		time();
+		function time() {
+			setTimeout(function() {
+				window.location.href = location;
+			},1000);			
+		};
+	}
 });

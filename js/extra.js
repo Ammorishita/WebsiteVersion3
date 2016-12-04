@@ -340,11 +340,6 @@ var ViewModel = function() {
 	Starcraft2.forEach(function(data){
 		self.Starcraft2().push(new Videos(data));
 	});
-	self.ajax = function() {
-		$.get( "comic/1.html", function( data ) {
-		  $( ".comic" ).html( data );
-		});
-	};
 	self.setComic = function() {
 		comic.src = this.src;
 		currentComic = ComicList.map(function(e) { return e.title; }).indexOf(this.title);
@@ -355,8 +350,10 @@ var ViewModel = function() {
 		currentComic = 0;
 	};
 	self.lastComic = function() {
-		currentComic = ComicList.length - 1;
-		comic.src = ComicList[currentComic].src;
+		//currentComic = ComicList.length - 1;
+		//comic.src = ComicList[currentComic].src;
+		window.location = 'about.html';
+
 	};
 	self.next = function() {
 		var length = ComicList.length- 1;

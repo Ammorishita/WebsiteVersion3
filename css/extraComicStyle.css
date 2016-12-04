@@ -31,6 +31,9 @@
   width: 1024px;
   margin: auto;
 }
+.comicNav a {
+  text-decoration: none;
+}
 .comicNav ul {
   text-align: center;
   margin-top: 10px;
@@ -47,6 +50,21 @@
 .comicNav li:hover {
   cursor: pointer;
   box-shadow: 0px 0px 2px 2px Dodgerblue;
+}
+.comicNav li a {
+  text-decoration: none;
+}
+.comicNav li a:link {
+  color: black;
+}
+.comicNav li a:visited {
+  color: black;
+}
+.comicNav li a:hover {
+  color: black;
+}
+.comicNav li a:active {
+  color: black;
 }
 
 /*# sourceMappingURL=extraComicStyle.css.map */

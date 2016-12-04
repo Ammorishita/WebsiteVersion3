@@ -1,5 +1,26 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="864px" height="864px" viewBox="0 0 864 864" enable-background="new 0 0 864 864" xml:space="preserve">
+<style>
+path, line, polyline {
+  stroke-width: 2;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: draw;
+  animation-timing-function: linear; }
+  path#first, line#first, polyline#first {
+    stroke: Dodgerblue;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation-duration: 7s; }
+    path#first.glasses, line#first.glasses, polyline#first.glasses {
+      stroke: #00ffcc; }
+
+@keyframes draw {
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+ } }
+</style>
 <g id="test">
 	<path id="first" fill="none" stroke="#00AEEF" stroke-miterlimit="10" d="M303.328,370.214c0,18-27,81,27,90s54,9,117,9s126-9,126-63
 		s-117-9-117-9s-90-9-99-9S303.328,370.214,303.328,370.214z"/>
