@@ -1,3 +1,6 @@
+header, footer {
+  opacity: 1;
+}
 .archives {
   width: 1024px;
   margin: auto;
@@ -53,6 +56,7 @@
 }
 .comicNav li a {
   text-decoration: none;
+  display: block;
 }
 .comicNav li a:link {
   color: black;

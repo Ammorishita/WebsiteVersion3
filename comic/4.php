@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="../css/extrastyle.css">
 </head>
 <body>
-
 <?php include('../comicheader.html');?>
 
   <main>

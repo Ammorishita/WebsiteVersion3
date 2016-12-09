@@ -65,6 +65,9 @@
   margin: auto;
   overflow: auto;
 }
+.videos::-webkit-scrollbar-thumb {
+  background-color: Cyan;
+}
 .videos ul {
   display: flex;
 }
@@ -93,6 +96,7 @@
   height: 100%;
   overflow: auto;
   margin: 0 auto;
+  margin-top: 40px;
 }
 
 .comicContainer {

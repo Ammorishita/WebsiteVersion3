@@ -17,26 +17,28 @@ window.onload = function() {
 	}
 	svg();
 };
-$('.projects, .extra, .about').click(function() {
+$('.projects, .about').click(function() {
 	$('#container').animate({
 		'opacity': '0'
 	},1000);
 	var classes = $(this).attr('class').split(' ');
 	var currentClass = classes[1];
 	var location = currentClass + '.html';
-	if(location = 'extra.html') {
-		time();
-		function time() {
-			setTimeout(function() {
-				window.location.href = 'comic/4.php';
-			},1000);			
-		};
-	} else {
 		time();
 		function time() {
 			setTimeout(function() {
 				window.location.href = location;
 			},1000);			
 		};
-	}
+});
+$('.extra').click(function() {
+	$('#container').animate({
+		'opacity': '0'
+	},1000);
+	time();
+	function time() {
+		setTimeout(function() {
+			window.location.href = 'comic/4.php';
+		},1000);			
+	};
 });

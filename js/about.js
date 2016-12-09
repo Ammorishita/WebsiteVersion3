@@ -6,6 +6,10 @@ window.onload = function() {
 	$('header, footer').animate({
 		'opacity': '1'
 	},500)
+	$('.loader').css({
+		'display':'none'
+	});
+	$('.loaderContainer').fadeOut();
 };
 var about = ['.bio','.resume','.contact'];
 

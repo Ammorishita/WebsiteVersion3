@@ -2,9 +2,10 @@ $(document).ready(function() {
 	$('.archive').click(function() {
 		$('.archives').fadeToggle();
 	});
-	$('header, footer').animate({
-		'opacity': '1'
-	},500)
+	$('.loader').css({
+		'display':'none'
+	});
+	$('.loaderContainer').fadeOut();
 });
 var comic, currentComic, $, ko;
 var ArtworkList = [
