@@ -37,7 +37,9 @@
 	margin-top: 20px;
 }
 .comparison {
-	width: 512px;
+	width: 25%;
+	cursor: pointer;
+	z-index: 1000;
 }
 .graphics {
 	width: 100%;

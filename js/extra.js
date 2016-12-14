@@ -28,73 +28,75 @@ var ArtworkList = [
 ];
 var GraphicList = [
 	{
-		'title' : 'Wolf Head Old',
-		'img' : 'images/Artworks/Wolf Head Old.png',
-		'height' : '350'
-	},
-	{
 		'title' : 'Wolf Head',
 		'img' : 'images/Artworks/Wolf Head.png',
-		'height' : '350'
-	},
-	{
-		'title' : 'Gladiator Old',
-		'img' : 'images/Artworks/Gladiator old.png',
-		'height' : '320'
+		'height' : '250'
 	},
 	{
 		'title' : 'Gladiator',
 		'img' : 'images/Artworks/Gladiator.png',
-		'height' : '320'
-	},
-	{
-		'title' : 'Football Field Old',
-		'img' : 'images/Artworks/Football Field Old.jpg',
-		'height' : '250'
+		'height' : '270'
 	},
 	{
 		'title' : 'Football Field',
 		'img' : 'images/Artworks/Football Field.jpg',
-		'height' : '250'
-	},
-	{
-		'title' : 'DiamondDustersOld',
-		'img' : 'images/Artworks/DiamondDustersOld.png',
-		'height' : '235'
+		'height' : '200'
 	},
 	{
 		'title' : 'DiamondDusters',
 		'img' : 'images/Artworks/DiamondDusters.png',
-		'height' : '235'
-	},
-	{
-		'title' : 'Bison Old',
-		'img' : 'images/Artworks/Bison Old.png',
-		'height' : '350'
+		'height' : '190'
 	},
 	{
 		'title' : 'Bison',
 		'img' : 'images/Artworks/Bison.png',
-		'height' : '350'
-	},
-	{
-		'title' : 'Helmet Logo Old',
-		'img' : 'images/Artworks/Helmet Logo Old.png',
-		'height' : '300'
+		'height' : '250'
 	},
 	{
 		'title' : 'Helmet Logo',
 		'img' : 'images/Artworks/HelmetLogo.png',
-		'height' : '300'
-	},
-	{
-		'title' : 'Eagle NH old',
-		'img' : 'images/Artworks/eagle old.png',
-		'height' : '350'
+		'height' : '250'
 	},
 	{
 		'title' : 'Eagle Nh',
 		'img' : 'images/Artworks/eaglenewNH.png',
+		'height' : '250'
+	},
+];
+var GraphicListOld = [
+	{
+		'title' : 'Wolf Head Old',
+		'img2' : 'images/Artworks/Wolf Head Old.png',
+		'height' : '350'
+	},
+	{
+		'title' : 'Gladiator Old',
+		'img2' : 'images/Artworks/Gladiator old.png',
+		'height' : '270'
+	},
+	{
+		'title' : 'Football Field Old',
+		'img2' : 'images/Artworks/Football Field Old.jpg',
+		'height' : '250'
+	},
+	{
+		'title' : 'DiamondDustersOld',
+		'img2' : 'images/Artworks/DiamondDustersOld.png',
+		'height' : '235'
+	},
+	{
+		'title' : 'Bison Old',
+		'img2' : 'images/Artworks/Bison Old.png',
+		'height' : '350'
+	},
+	{
+		'title' : 'Helmet Logo Old',
+		'img2' : 'images/Artworks/Helmet Logo Old.png',
+		'height' : '300'
+	},
+	{
+		'title' : 'Eagle NH old',
+		'img2' : 'images/Artworks/eagle old.png',
 		'height' : '350'
 	},
 ];
@@ -303,7 +305,9 @@ var ViewModel = function() {
 		    scrollTop: 0
 		}, 0);
 	});
-	
+	$('.comparison').click(function(){
+		console.log('test')
+	})
 	$("#graphicsSubContainer, #artworksSubContainer").scroll(function() {
 	   var offset = ($("#graphicsSubContainer").scrollTop());
 	   var offset2 = ($("#artworksSubContainer").scrollTop());  
