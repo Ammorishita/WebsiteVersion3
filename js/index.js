@@ -30,8 +30,8 @@ $(document).click(function(e) {
 	$('.click').addClass('active')
 	setTimeout(function() {
 		$('.click').css({
-			'-webkit-transform' : 'scale(5)',
-			'transform' : 'scale(50)'
+			'-webkit-transform' : 'scale(40)',
+			'transform' : 'scale(40)'
 		});
 	},1)
 	setTimeout(function() {

@@ -11,6 +11,12 @@
     .archives ul li:hover {
       color: white;
       cursor: pointer; }
+    .archives ul li a {
+      text-decoration: none;
+      color: Dodgerblue; }
+    .archives ul li a:hover {
+      color: white;
+      text-decoration: none; }
 
 .comic {
   width: 1024px;

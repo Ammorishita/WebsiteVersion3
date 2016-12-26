@@ -12,6 +12,14 @@
 			color: white;
 			cursor: pointer;
 		}
+		a {
+			text-decoration: none;
+			color: Dodgerblue;
+		}
+		a:hover {
+			color: white;
+			text-decoration: none;
+		}
 	}
 }
 .comic {

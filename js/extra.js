@@ -5,9 +5,12 @@ $(document).ready(function() {
 	$('.loader').css({
 		'display':'none'
 	});
+	$('footer').animate({
+		'opacity' : '1'
+	},500)
 	$('.loaderContainer').fadeOut();
 });
-var comic, currentComic, $, ko;
+var $, ko;
 var ArtworkList = [
 	{
 		'title' : 'Four Elements',
@@ -30,92 +33,44 @@ var GraphicList = [
 	{
 		'title' : 'Wolf Head',
 		'img' : 'images/Artworks/Wolf Head.png',
-		'height' : '250'
+		'img2' : 'images/Artworks/Wolf Head Old.png',
+		'height' : '300'
 	},
 	{
 		'title' : 'Gladiator',
 		'img' : 'images/Artworks/Gladiator.png',
-		'height' : '270'
+		'img2' : 'images/Artworks/Gladiator old.png',
+		'height' : '300'
 	},
 	{
 		'title' : 'Football Field',
-		'img' : 'images/Artworks/Football Field.jpg',
-		'height' : '200'
+		'img' : 'images/Artworks/Football Field.png',
+		'img2' : 'images/Artworks/Football Field Old.png',
+		'height' : '300'
 	},
 	{
 		'title' : 'DiamondDusters',
 		'img' : 'images/Artworks/DiamondDusters.png',
-		'height' : '190'
+		'img2' : 'images/Artworks/DiamondDustersOld.png',
+		'height' : '300'
 	},
 	{
 		'title' : 'Bison',
 		'img' : 'images/Artworks/Bison.png',
-		'height' : '250'
+		'img2' : 'images/Artworks/Bison Old.png',
+		'height' : '300'
 	},
 	{
 		'title' : 'Helmet Logo',
 		'img' : 'images/Artworks/HelmetLogo.png',
-		'height' : '250'
-	},
-	{
-		'title' : 'Eagle Nh',
-		'img' : 'images/Artworks/eaglenewNH.png',
-		'height' : '250'
-	},
-];
-var GraphicListOld = [
-	{
-		'title' : 'Wolf Head Old',
-		'img2' : 'images/Artworks/Wolf Head Old.png',
-		'height' : '350'
-	},
-	{
-		'title' : 'Gladiator Old',
-		'img2' : 'images/Artworks/Gladiator old.png',
-		'height' : '270'
-	},
-	{
-		'title' : 'Football Field Old',
-		'img2' : 'images/Artworks/Football Field Old.jpg',
-		'height' : '250'
-	},
-	{
-		'title' : 'DiamondDustersOld',
-		'img2' : 'images/Artworks/DiamondDustersOld.png',
-		'height' : '235'
-	},
-	{
-		'title' : 'Bison Old',
-		'img2' : 'images/Artworks/Bison Old.png',
-		'height' : '350'
-	},
-	{
-		'title' : 'Helmet Logo Old',
 		'img2' : 'images/Artworks/Helmet Logo Old.png',
 		'height' : '300'
 	},
 	{
-		'title' : 'Eagle NH old',
+		'title' : 'Eagle Nh',
+		'img' : 'images/Artworks/eaglenewNH.png',
 		'img2' : 'images/Artworks/eagle old.png',
-		'height' : '350'
-	},
-];
-var ComicList = [
-	{
-		'title' : 'Chapter 1: Pest Control',
-		'src' : "images/Comic/Ch1.png"
-	},
-	{
-		'title' : 'Chapter 2: No Parking',
-		'src' : "images/Comic/Ch2.png"
-	},
-	{
-		'title' : 'Chapter 3: Pasta and Cereal',
-		'src' : "images/Comic/Ch3.png"
-	},	
-	{
-		'title' : 'Chapter 4: Hard to See',
-		'src' : "images/Comic/Ch4.png"
+		'height' : '300'
 	},
 ];
 var Warcraft = [
@@ -240,20 +195,15 @@ var Videos = function(data) {
 	this.src = data.src;
 	this.img = data.img;
 };
-var Comic = function(data) {
-	this.title = data.title;
-	this.src = data.src;
-};
 var Artwork = function(data) {
 	this.title = data.title;
 	this.img = data.img;
+	this.img2 = data.img2;
 	this.height = data.height;
 };
 
 var ViewModel = function() {
 	var self = this;
-	comic = document.getElementById('currentComic');
-	currentComic = ComicList.length - 1;
 	self.youtube = ko.observable(true);
 	self.comic = ko.observable(true);
 	self.artworks = ko.observable(true);
@@ -305,18 +255,13 @@ var ViewModel = function() {
 		    scrollTop: 0
 		}, 0);
 	});
-	$('.comparison').click(function(){
-		console.log('test')
-	})
 	$("#graphicsSubContainer, #artworksSubContainer").scroll(function() {
 	   var offset = ($("#graphicsSubContainer").scrollTop());
 	   var offset2 = ($("#artworksSubContainer").scrollTop());  
 	   if(offset || offset2 > 0) {
-	   		$('.adobe').slideUp('fast');
 	   		$('.topGraphics').fadeIn();
 	   		$('.topArtworks').fadeIn();
 	   } else {
-	   		$('.adobe').show();
 	   		$('.topGraphics').fadeOut();
 	   		$('.topArtworks').fadeOut();
 	   }
@@ -333,9 +278,6 @@ var ViewModel = function() {
 	GraphicList.forEach(function(data) {
 		self.Graphics().push(new Artwork(data));
 	});
-	ComicList.forEach(function(data) {
-		self.Comics().push(new Comic(data));
-	});
 	Warcraft.forEach(function(data){
 		self.ReignofChaos().push(new Videos(data));
 	});
@@ -345,33 +287,15 @@ var ViewModel = function() {
 	Starcraft2.forEach(function(data){
 		self.Starcraft2().push(new Videos(data));
 	});
-	self.setComic = function() {
-		comic.src = this.src;
-		currentComic = ComicList.map(function(e) { return e.title; }).indexOf(this.title);
-	};
-
-	self.firstComic = function() {
-		comic.src = ComicList[0].src;
-		currentComic = 0;
-	};
-	self.lastComic = function() {
-		//currentComic = ComicList.length - 1;
-		//comic.src = ComicList[currentComic].src;
-		window.location = 'about.html';
-
-	};
-	self.next = function() {
-		var length = ComicList.length- 1;
-		if (currentComic == length) {} else {
-			currentComic++;
-			comic.src = ComicList[currentComic].src;
+	let changed = true;
+	self.test = function() {	
+		if (changed) {
+			event.target.src = this.img2;
 		}
-	};
-	self.previous = function() {
-		if (currentComic === 0) {} else {
-			currentComic--;
-			comic.src = ComicList[currentComic].src;
+		if (!changed) {
+			event.target.src = this.img;
 		}
+		changed = !changed;
 	};
 	self.setVideo = function() {
 		console.log(this.src);

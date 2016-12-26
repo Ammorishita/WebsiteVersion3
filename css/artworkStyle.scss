@@ -37,9 +37,12 @@
 	margin-top: 20px;
 }
 .comparison {
-	width: 25%;
+	width: 20%;
 	cursor: pointer;
 	z-index: 1000;
+	border: 1px solid blue;
+	margin: auto;
+	height: 300px;
 }
 .graphics {
 	width: 100%;
@@ -48,10 +51,10 @@
 	display: flex;
 	flex-wrap: wrap;
 	text-align: center;
+	justify-content: space-around;
 	img {
-		margin: auto;
-		margin-top: 50px;	
-		margin-bottom: 150px;
+		margin: 50px 50px;
+		border: 1px solid blue;
 	}
 }
 .graphicsBottomLink p, .illustrationBottomLink p{

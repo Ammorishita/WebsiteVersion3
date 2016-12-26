@@ -51,9 +51,7 @@
 
 					<div id="graphicsSubContainer" data-bind="visible: vectors">
 						<div class="graphics" data-bind="foreach: Graphics">
-							<div class="comparison">
-								<img data-bind="attr: {src: img, alt: title, height: height}">
-							</div>
+							<img data-bind="attr: {src: img, alt: title, height: height}, click: $root.test">
 						</div>
 						<div class="topGraphics">
 							<p>/\</p>
