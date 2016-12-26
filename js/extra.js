@@ -204,6 +204,7 @@ var Artwork = function(data) {
 
 var ViewModel = function() {
 	var self = this;
+
 	self.youtube = ko.observable(true);
 	self.comic = ko.observable(true);
 	self.artworks = ko.observable(true);
@@ -216,62 +217,7 @@ var ViewModel = function() {
 	self.Comics = ko.observableArray([]);
 	self.Artworks = ko.observableArray([]);
 	self.Graphics = ko.observableArray([]);
-	$('.current').click(function() {
-		self.youtube(false);
-		self.comic(false);
-		self.artworks(false);
-		self.projects(false);
-		var currentClass = ($(this).attr("class"));
-		if(currentClass == 'youtubeLink current') {self.youtube(true);}
-		if(currentClass == 'comicLink current') {self.comic(true);}
-		if(currentClass == 'artworksLink current') {self.artworks(true);}
-		if(currentClass == 'projectsLink current') {self.projects(true);}
-	});
-	$('.illustrationLink').click(function() {
-		self.illustration(true);
-		self.vectors(false);
-		$('#artworksSubContainer').animate({
-		    scrollTop: 0
-		}, 0);
-	});
-	$('.graphicsLink').click(function() {
-		self.illustration(false);
-		self.vectors(true);
-		$('#graphicsSubContainer').animate({
-		    scrollTop: 0
-		}, 0);
-	});
-	$('.illustrationBottomLink').click(function() {
-		self.illustration(true);
-		self.vectors(false);
-		$('#artworksSubContainer').animate({
-		    scrollTop: 0
-		}, 0);
-	});
-	$('.graphicsBottomLink').click(function() {
-		self.illustration(false);
-		self.vectors(true);
-		$('#graphicsSubContainer').animate({
-		    scrollTop: 0
-		}, 0);
-	});
-	$("#graphicsSubContainer, #artworksSubContainer").scroll(function() {
-	   var offset = ($("#graphicsSubContainer").scrollTop());
-	   var offset2 = ($("#artworksSubContainer").scrollTop());  
-	   if(offset || offset2 > 0) {
-	   		$('.topGraphics').fadeIn();
-	   		$('.topArtworks').fadeIn();
-	   } else {
-	   		$('.topGraphics').fadeOut();
-	   		$('.topArtworks').fadeOut();
-	   }
-	   $('.topGraphics').click(function() {
-	   		$("#graphicsSubContainer").scrollTop(0);
-	   });
-	   $('.topArtworks').click(function() {
-	   		$("#artworksSubContainer").scrollTop(0);
-	   });
-	});
+
 	ArtworkList.forEach(function(data) {
 		self.Artworks().push(new Artwork(data));
 	});
@@ -287,6 +233,54 @@ var ViewModel = function() {
 	Starcraft2.forEach(function(data){
 		self.Starcraft2().push(new Videos(data));
 	});
+
+	var jQuery = {
+		init: function() {
+			this.cache();
+			this.artworkNav();
+			this.scrollTop();
+		},
+		cache: function() {
+
+		},
+		artworkNav: function() {
+			$('.illustrationLink').click(function() {
+				self.illustration(true);
+				self.vectors(false);
+				$('#artworksSubContainer').animate({
+				    scrollTop: 0
+				}, 0);
+			});
+			$('.graphicsLink').click(function() {
+				self.illustration(false);
+				self.vectors(true);
+				$('#graphicsSubContainer').animate({
+				    scrollTop: 0
+				}, 0);
+			});
+		},
+		scrollTop: function() {
+			$("#graphicsSubContainer, #artworksSubContainer").scroll(function() {
+			   var offset = ($("#graphicsSubContainer").scrollTop());
+			   var offset2 = ($("#artworksSubContainer").scrollTop());  
+			   if(offset || offset2 > 0) {
+			   		$('.topGraphics').fadeIn();
+			   		$('.topArtworks').fadeIn();
+			   } else {
+			   		$('.topGraphics').fadeOut();
+			   		$('.topArtworks').fadeOut();
+			   }
+			   $('.topGraphics').click(function() {
+			   		$("#graphicsSubContainer").scrollTop(0);
+			   });
+			   $('.topArtworks').click(function() {
+			   		$("#artworksSubContainer").scrollTop(0);
+			   });
+			});
+		}
+	}
+	jQuery.init();
+
 	let changed = true;
 	self.test = function() {	
 		if (changed) {
