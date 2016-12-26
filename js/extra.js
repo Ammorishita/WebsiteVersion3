@@ -1,14 +1,26 @@
 $(document).ready(function() {
-	$('.archive').click(function() {
-		$('.archives').fadeToggle();
-	});
-	$('.loader').css({
-		'display':'none'
-	});
-	$('footer').animate({
-		'opacity' : '1'
-	},500)
-	$('.loaderContainer').fadeOut();
+	var load = {
+		init: function() {
+			this.archive();
+			this.footer();
+			this.cache();
+		},
+		cache: function() {
+
+		},
+		archive: function() {
+			var archive = document.querySelector('.archive');
+			archive.addEventListener("click", function() {
+				$('.archives').fadeToggle();
+			})
+		},
+		footer: function() {
+			$('footer').animate({
+				'opacity' : '1'
+			},500);
+		}
+	}
+	load.init();
 });
 var $, ko;
 var ArtworkList = [
@@ -205,6 +217,25 @@ var Artwork = function(data) {
 var ViewModel = function() {
 	var self = this;
 
+	let changed = true;
+	self.test = function() {	
+		if (changed) {
+			event.target.src = this.img2;
+		}
+		if (!changed) {
+			event.target.src = this.img;
+		}
+		changed = !changed;
+	};
+	self.setVideo = function() {
+		console.log(this.src);
+		var vid = document.getElementById("mainVideo");
+		vid.src = this.src;
+		$('.youtubeContainer').animate({
+		    scrollTop: 0
+		}, 500);
+	};
+	
 	self.youtube = ko.observable(true);
 	self.comic = ko.observable(true);
 	self.artworks = ko.observable(true);
@@ -281,24 +312,6 @@ var ViewModel = function() {
 	}
 	jQuery.init();
 
-	let changed = true;
-	self.test = function() {	
-		if (changed) {
-			event.target.src = this.img2;
-		}
-		if (!changed) {
-			event.target.src = this.img;
-		}
-		changed = !changed;
-	};
-	self.setVideo = function() {
-		console.log(this.src);
-		var vid = document.getElementById("mainVideo");
-		vid.src = this.src;
-		$('.youtubeContainer').animate({
-		    scrollTop: 0
-		}, 500);
-	};
 };
 
 $(function() {
