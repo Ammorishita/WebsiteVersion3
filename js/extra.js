@@ -1,27 +1,3 @@
-$(document).ready(function() {
-	var load = {
-		init: function() {
-			this.archive();
-			this.footer();
-			this.cache();
-		},
-		cache: function() {
-
-		},
-		archive: function() {
-			var archive = document.querySelector('.archive');
-			archive.addEventListener("click", function() {
-				$('.archives').fadeToggle();
-			})
-		},
-		footer: function() {
-			$('footer').animate({
-				'opacity' : '1'
-			},500);
-		}
-	}
-	load.init();
-});
 var $, ko;
 var ArtworkList = [
 	{
@@ -201,6 +177,29 @@ var Starcraft2 = [
 		'img' : "images/VideoImages/Last Stand.png"		
 	},
 ];
+$(document).ready(function() {
+	var load = {
+		init: function() {
+			this.archive();
+			this.footer();
+			this.cache();
+		},
+		cache: function() {
+
+		},
+		archive: function() {
+			$('.archive').click(function() {
+				$('.archives').fadeToggle();
+			});
+		},
+		footer: function() {
+			$('footer').animate({
+				'opacity' : '1'
+			},500);
+		}
+	}
+	load.init();
+});
 
 var Videos = function(data) {
 	this.title = (data.title);
@@ -216,7 +215,18 @@ var Artwork = function(data) {
 
 var ViewModel = function() {
 	var self = this;
-
+	self.youtube = ko.observable(true);
+	self.comic = ko.observable(true);
+	self.artworks = ko.observable(true);
+	self.projects = ko.observable(false);
+	self.illustration = ko.observable(false);
+	self.vectors = ko.observable(true);
+	self.ReignofChaos = ko.observableArray([]);
+	self.FrozenThrone = ko.observableArray([]);
+	self.Starcraft2 = ko.observableArray([]);
+	self.Comics = ko.observableArray([]);
+	self.Artworks = ko.observableArray([]);
+	self.Graphics = ko.observableArray([]);
 	let changed = true;
 	self.test = function() {	
 		if (changed) {
@@ -235,19 +245,6 @@ var ViewModel = function() {
 		    scrollTop: 0
 		}, 500);
 	};
-	
-	self.youtube = ko.observable(true);
-	self.comic = ko.observable(true);
-	self.artworks = ko.observable(true);
-	self.projects = ko.observable(false);
-	self.illustration = ko.observable(false);
-	self.vectors = ko.observable(true);
-	self.ReignofChaos = ko.observableArray([]);
-	self.FrozenThrone = ko.observableArray([]);
-	self.Starcraft2 = ko.observableArray([]);
-	self.Comics = ko.observableArray([]);
-	self.Artworks = ko.observableArray([]);
-	self.Graphics = ko.observableArray([]);
 
 	ArtworkList.forEach(function(data) {
 		self.Artworks().push(new Artwork(data));
