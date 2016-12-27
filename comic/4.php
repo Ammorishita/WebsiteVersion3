@@ -36,10 +36,7 @@
       </section>
     </article>  
   </main>
-
-  <footer>
-    <p>Alex Morishita</p>
-  </footer>
+  <?php include('../footer.html');?>
   <link rel="stylesheet" href="../css/extraComicStyle.css">
   <script src="../js/libs/jquery-3.1.0.min.js"></script>
   <script src="../js/libs/knockout.js"></script>

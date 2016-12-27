@@ -229,7 +229,6 @@ $(document).ready(function() {
 	var load = {
 		init: function() {
 			this.archive();
-			this.footer();
 			this.cache();
 		},
 		cache: function() {
@@ -238,11 +237,6 @@ $(document).ready(function() {
 		archive: function() {
 			$('.archive').click(function() {
 				$('.archives').fadeToggle();
-			});
-		},
-		footer: function() {
-			$('footer').css({
-				'opacity' : '1'
 			});
 		}
 	}
