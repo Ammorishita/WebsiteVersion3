@@ -54,7 +54,10 @@
 	justify-content: space-around;
 	img {
 		margin: 50px 50px;
-		border: 1px solid blue;
+		border: 1px solid black;
+	}
+	&:hover {
+		cursor: pointer;
 	}
 }
 .graphicsBottomLink p, .illustrationBottomLink p{

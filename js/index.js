@@ -20,7 +20,6 @@ window.onload = function() {
 $(document).click(function(e) {
 	const x = e.pageX;
 	const y = e.pageY;
-	console.log(x, y);
 	const myDiv = '<div class="click"></div>';
 	$('body').append(myDiv);
 	$('.click').css({
@@ -39,28 +38,36 @@ $(document).click(function(e) {
 		$('body .click:last').remove();
 	},150);
 });
-$('.projects, .about').click(function() {
-	$('#container').animate({
-		'opacity': '0'
-	},1000);
-	var classes = $(this).attr('class').split(' ');
-	var currentClass = classes[1];
-	var location = currentClass + '.html';
-		time();
-		function time() {
-			setTimeout(function() {
-				window.location.href = location;
-			},1000);			
-		};
-});
-$('.extra').click(function() {
-	$('#container').animate({
-		'opacity': '0'
-	},1000);
-	time();
-	function time() {
-		setTimeout(function() {
-			window.location.href = 'comic/4.php';
-		},1000);			
-	};
-});
+var navigation = {
+	init: function() {
+		this.navbar();
+	},
+	navbar: function() {
+		$('.projects, .about').click(function() {
+			$('#container').animate({
+				'opacity': '0'
+			},1000);
+			var classes = $(this).attr('class').split(' ');
+			var currentClass = classes[1];
+			var location = currentClass + '.html';
+				time();
+				function time() {
+					setTimeout(function() {
+						window.location.href = location;
+					},1000);			
+				};
+		});
+		$('.extra').click(function() {
+			$('#container').animate({
+				'opacity': '0'
+			},1000);
+			time();
+			function time() {
+				setTimeout(function() {
+					window.location.href = 'comic/4.php';
+				},1000);			
+			};
+		});		
+	}	
+}
+navigation.init();

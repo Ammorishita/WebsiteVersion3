@@ -60,6 +60,54 @@ var GraphicList = [
 		'img2' : 'images/Artworks/eagle old.png',
 		'height' : '300'
 	},
+		{
+		'title' : 'BulldogGray',
+		'img' : 'images/Artworks/BulldogGray.png',
+		'img2' : 'images/Artworks/BulldogGrayOld.png',
+		'height' : '300'
+	},
+	{
+		'title' : 'Bandits',
+		'img' : 'images/Artworks/Bandits.png',
+		'img2' : 'images/Artworks/BanditsOld.png',
+		'height' : '300'
+	},
+	{
+		'title' : 'Shark Logo',
+		'img' : 'images/Artworks/Shark Logo.png',
+		'img2' : 'images/Artworks/Shark Logo Old.png',
+		'height' : '300'
+	},
+	{
+		'title' : 'Silverback',
+		'img' : 'images/Artworks/silverback.png',
+		'img2' : 'images/Artworks/silverback old.png',
+		'height' : '300'
+	},
+	{
+		'title' : 'Silver Creek',
+		'img' : 'images/Artworks/Silver Creek.png',
+		'img2' : 'images/Artworks/Silver Creek old.png',
+		'height' : '300'
+	},
+	{
+		'title' : 'pirates',
+		'img' : 'images/Artworks/pirates.png',
+		'img2' : 'images/Artworks/piratesOld.png',
+		'height' : '300'
+	},
+	{
+		'title' : 'Cobra',
+		'img' : 'images/Artworks/Cobra.png',
+		'img2' : 'images/Artworks/Cobra Old.png',
+		'height' : '300'
+	},
+	{
+		'title' : 'Plainfield',
+		'img' : 'images/Artworks/Plainfield.png',
+		'img2' : 'images/Artworks/Plainfield Old.png',
+		'height' : '300'
+	},
 ];
 var Warcraft = [
 	{
@@ -193,9 +241,9 @@ $(document).ready(function() {
 			});
 		},
 		footer: function() {
-			$('footer').animate({
+			$('footer').css({
 				'opacity' : '1'
-			},500);
+			});
 		}
 	}
 	load.init();
